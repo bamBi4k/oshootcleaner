@@ -5,7 +5,7 @@
 # OhShootCleaner
 
 **One-tap cleanup and system diagnostics for Android.**
-No root. No Shizuku. No fake progress bars.
+No root. No fake progress bars.
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Platform](https://img.shields.io/badge/Platform-Android%208.0%2B-3DDC84.svg?logo=android&logoColor=white)](https://developer.android.com)
