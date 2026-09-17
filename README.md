@@ -34,11 +34,11 @@ No root. No fake progress bars.
 
 ## What it does
 
-**Oh Shoot** is a single button that clears what an ordinary Android app is actually allowed to clear — and hands you straight to the one screen that can clear the rest.
+**Oh Shoot** is a single button that clears what an ordinary Android app is actually allowed to clear and hands you straight to the one screen that can clear the rest.
 
 - **Frees RAM** by asking Android to evict cached background processes
 - **Clears its own cache** plus the shared WebView cache
-- **Reports real numbers** — before/after free RAM, bytes freed, time taken
+- **Reports real numbers** before/after free RAM, bytes freed, time taken
 - **Deep-links you** to the Settings screens that hold the OS-level permission to clear every app's cache, show real battery drain, and cap background processes
 
 ## What it doesn't do
@@ -61,7 +61,7 @@ Oh Shoot doesn't pretend otherwise. It does what it can, and points you to the r
 | **Analysis** | Duplicates, large files, unused apps, media scope picker |
 | **Performance** | Power Saver / Balanced / Performance presets |
 | **Battery** | Health, temperature, charge estimation, quick settings |
-| **Themes** | Six flavors — Latte, Matcha, Sakura, Lavender, Mono, Alpha Founder |
+| **Themes** | Six flavors: Latte, Matcha, Sakura, Lavender, Mono, Alpha Founder |
 | **Languages** | English, German, Spanish, French, Italian, Portuguese, Russian |
 | **Widgets** | Home-screen cleaner, dashboard, data usage |
 | **Shortcuts** | Quick-settings tile and long-press launcher shortcuts |
