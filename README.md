@@ -1,11 +1,11 @@
 <div align="center">
 
-<img src="fastlane/metadata/android/en-US/images/icon.png" width="120" alt="Oh Shoot icon" />
+<img src="fastlane/metadata/android/en-US/images/icon.png" width="120" alt="OhShootCleaner icon" />
 
 # OhShootCleaner
 
-**One-tap cleanup and system diagnostics for Android.**
-No root. No fake progress bars.
+**One-tap cleanup and system diagnostics for Android.**  
+No root. No fake progress bars. Real control.
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Platform](https://img.shields.io/badge/Platform-Android%208.0%2B-3DDC84.svg?logo=android&logoColor=white)](https://developer.android.com)
@@ -34,22 +34,27 @@ No root. No fake progress bars.
 
 ## What it does
 
-**Oh Shoot** is a single button that clears what an ordinary Android app is actually allowed to clear and hands you straight to the one screen that can clear the rest.
+**OhShootCleaner** cleans what standard apps can reach, uses Android Accessibility to clear app caches, and integrates with Shizuku to unlock system-level controls without root.
 
-- **Frees RAM** by asking Android to evict cached background processes
-- **Clears its own cache** plus the shared WebView cache
-- **Reports real numbers** before/after free RAM, bytes freed, time taken
-- **Deep-links you** to the Settings screens that hold the OS-level permission to clear every app's cache, show real battery drain, and cap background processes
+* **Smart Cache Cleaning:** Clears internal and WebView caches directly, plus automated app cache clearing using Accessibility services.
+* **Shizuku Integration:** Unlocks power features like force-stopping apps, managing background processes, and tweaking secure system settings.
+* **Storage Analysis:** Scans for duplicate files, identifies large waste, and breaks down storage usage line by line.
+* **Network & Stats Tracking:** Monitors real-time network usage, live RAM stats, thermal metrics, and battery health.
+* **Direct System Access:** Quick shortcuts and deep links straight to OS settings when manual control is needed.
 
-## What it doesn't do
+---
 
-Android's sandboxing means a regular app cannot:
+## How it works
 
-- Delete another app's cache directory
-- Force-stop another app's services
-- List what's genuinely running system-wide
+Standard Android sandboxing limits basic apps from touching other apps' data. OhShootCleaner bridges that gap using legitimate system tools:
 
-Oh Shoot doesn't pretend otherwise. It does what it can, and points you to the right place for the rest.
+* **Basic Mode:** Works out of the box to clear app/WebView cache, track stats, scan duplicates, and release background RAM.
+* **Accessibility Mode:** Automates UI actions to clear cache across third-party apps automatically.
+* **Shizuku Mode:** Connects to system APIs for direct force-stops, background process limits, and secure setting adjustments without rooting your device.
+
+No fake animations or inflated numbers, just honest stats before and after every action.
+
+---
 
 ## Features
 
@@ -66,6 +71,8 @@ Oh Shoot doesn't pretend otherwise. It does what it can, and points you to the r
 | **Widgets** | Home-screen cleaner, dashboard, data usage |
 | **Shortcuts** | Quick-settings tile and long-press launcher shortcuts |
 
+---
+
 ## Install
 
 | Source | Status |
@@ -76,9 +83,12 @@ Oh Shoot doesn't pretend otherwise. It does what it can, and points you to the r
 
 Requires **Android 8.0 (API 26)** or newer.
 
+---
+
 ## Build from source
 
 ```bash
 git clone https://github.com/bamBi4k/oshootcleaner.git
 cd oshootcleaner
 ./gradlew assembleDebug
+```
