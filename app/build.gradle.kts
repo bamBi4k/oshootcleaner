@@ -4,26 +4,37 @@ plugins {
 }
 
 android {
-    namespace = "com.example.oshootcleaner"
+    namespace = "io.github.bambi4k.oshootcleaner"
     compileSdk = 34
 
     lint {
+        // Shizuku uses hidden system APIs intentionally.
+        // PrivateApi is the correct lint ID to suppress.
+        disable += "PrivateApi"
+        // Keep RestrictedApi disabled too — AndroidX internals
+        // are used by Compose/Glance.
         disable += "RestrictedApi"
-        // or, more targeted:
-        // disable += "PrivateApi"
     }
 
     defaultConfig {
-        applicationId = "com.example.oshootcleaner"
+        // FIXED: must match namespace exactly for F-Droid.
+        applicationId = "io.github.bambi4k.oshootcleaner"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+
+        // FIXED: bumped for v1.0.1
+        versionCode = 2
+        versionName = "1.0.1"
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
+            isDebuggable = false
+            // F-Droid signs the APK itself — do NOT add a signingConfig here.
+        }
+        debug {
+            applicationIdSuffix = ".debug"
         }
     }
 
@@ -41,7 +52,14 @@ android {
     }
 
     composeOptions {
+        // Requires Kotlin 1.9.24 in the root build.gradle.kts
         kotlinCompilerExtensionVersion = "1.5.14"
+    }
+
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
     }
 }
 

@@ -1,0 +1,2 @@
+Second public release.
+- F-Droid prepared

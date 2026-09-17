@@ -7,9 +7,9 @@
         android:shortcutShortLabel="@string/shortcut_clean_short"
         android:shortcutLongLabel="@string/shortcut_clean_long">
         <intent
-            android:action="com.example.oshootcleaner.SHORTCUT_CLEAN"
-            android:targetPackage="com.example.oshootcleaner"
-            android:targetClass="com.example.oshootcleaner.MainActivity" />
+            android:action="io.github.bambi4k.oshootcleaner.SHORTCUT_CLEAN"
+            android:targetPackage="io.github.bambi4k.oshootcleaner"
+            android:targetClass="io.github.bambi4k.oshootcleaner.MainActivity" />
         <categories android:name="android.shortcut.conversation" />
     </shortcut>
 
@@ -20,9 +20,9 @@
         android:shortcutShortLabel="@string/shortcut_analyse_short"
         android:shortcutLongLabel="@string/shortcut_analyse_long">
         <intent
-            android:action="com.example.oshootcleaner.SHORTCUT_ANALYSE"
-            android:targetPackage="com.example.oshootcleaner"
-            android:targetClass="com.example.oshootcleaner.MainActivity" />
+            android:action="io.github.bambi4k.oshootcleaner.SHORTCUT_ANALYSE"
+            android:targetPackage="io.github.bambi4k.oshootcleaner"
+            android:targetClass="io.github.bambi4k.oshootcleaner.MainActivity" />
         <categories android:name="android.shortcut.conversation" />
     </shortcut>
 
@@ -33,9 +33,9 @@
         android:shortcutShortLabel="@string/shortcut_dashboard_short"
         android:shortcutLongLabel="@string/shortcut_dashboard_long">
         <intent
-            android:action="com.example.oshootcleaner.SHORTCUT_DASHBOARD"
-            android:targetPackage="com.example.oshootcleaner"
-            android:targetClass="com.example.oshootcleaner.MainActivity" />
+            android:action="io.github.bambi4k.oshootcleaner.SHORTCUT_DASHBOARD"
+            android:targetPackage="io.github.bambi4k.oshootcleaner"
+            android:targetClass="io.github.bambi4k.oshootcleaner.MainActivity" />
         <categories android:name="android.shortcut.conversation" />
     </shortcut>
 </shortcuts>
