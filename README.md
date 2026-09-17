@@ -2,7 +2,7 @@
 
 <img src="fastlane/metadata/android/en-US/images/icon.png" width="120" alt="Oh Shoot icon" />
 
-# Oh Shoot
+# OhShootCleaner
 
 **One-tap cleanup and system diagnostics for Android.**
 No root. No Shizuku. No fake progress bars.
