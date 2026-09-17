@@ -5,7 +5,6 @@
         <include domain="sharedpref" path="oh_shoot_prefs.xml"/>
         <include domain="sharedpref" path="oh_shoot_alpha.xml"/>
         <!-- Exclude anything sensitive that might creep in -->
-        <exclude domain="sharedpref" path="com.google.android.gms.appid.xml"/>
     </cloud-backup>
     <device-transfer>
         <include domain="sharedpref" path="oh_shoot_prefs.xml"/>
