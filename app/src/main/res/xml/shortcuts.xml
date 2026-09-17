@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="clean_now"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_clean"
+        android:shortcutShortLabel="@string/shortcut_clean_short"
+        android:shortcutLongLabel="@string/shortcut_clean_long">
+        <intent
+            android:action="com.example.oshootcleaner.SHORTCUT_CLEAN"
+            android:targetPackage="com.example.oshootcleaner"
+            android:targetClass="com.example.oshootcleaner.MainActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="analyse"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_analyse"
+        android:shortcutShortLabel="@string/shortcut_analyse_short"
+        android:shortcutLongLabel="@string/shortcut_analyse_long">
+        <intent
+            android:action="com.example.oshootcleaner.SHORTCUT_ANALYSE"
+            android:targetPackage="com.example.oshootcleaner"
+            android:targetClass="com.example.oshootcleaner.MainActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="dashboard"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_dashboard"
+        android:shortcutShortLabel="@string/shortcut_dashboard_short"
+        android:shortcutLongLabel="@string/shortcut_dashboard_long">
+        <intent
+            android:action="com.example.oshootcleaner.SHORTCUT_DASHBOARD"
+            android:targetPackage="com.example.oshootcleaner"
+            android:targetClass="com.example.oshootcleaner.MainActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+</shortcuts>

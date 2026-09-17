@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Oh Shoot</string>
+
+    <!-- Tabs -->
+    <string name="tab_dashboard">Панель</string>
+    <string name="tab_analysis">Анализ</string>
+    <string name="tab_performance">Производительность</string>
+    <string name="tab_storage">Хранилище</string>
+    <string name="tab_battery">Батарея</string>
+    <string name="tab_permissions">Разрешения</string>
+    <string name="tab_settings">Настройки</string>
+
+    <!-- Common -->
+    <string name="action_delete">Удалить</string>
+    <string name="action_cancel">Отмена</string>
+    <string name="action_open">Открыть</string>
+    <string name="action_recheck">Проверить снова</string>
+    <string name="action_copy">Копировать</string>
+    <string name="unavailable">Недоступно</string>
+    <string name="never_used">никогда не использовалось</string>
+    <string name="charged">Заряжается</string>
+    <string name="not_charging">Не заряжается</string>
+
+    <!-- Dashboard -->
+    <string name="dash_title">Панель</string>
+    <string name="dash_memory">Память</string>
+    <string name="dash_storage">Хранилище</string>
+    <string name="dash_battery">Батарея</string>
+    <string name="dash_temperature">Температура</string>
+    <string name="dash_thermal">Тепловой режим</string>
+    <string name="dash_power_draw">Потребление</string>
+    <string name="dash_cpu">Загрузка ЦП</string>
+    <string name="dash_boost">Ускорение в один тап</string>
+    <string name="dash_boosting">Ускорение…</string>
+    <string name="dash_thermal_nominal">Норма</string>
+    <string name="dash_thermal_light">Слабое</string>
+    <string name="dash_thermal_moderate">Умеренное</string>
+    <string name="dash_thermal_severe">Сильное</string>
+    <string name="dash_thermal_critical">Критическое</string>
+    <string name="dash_thermal_emergency">Чрезвычайное</string>
+    <string name="dash_thermal_shutdown">Отключение</string>
+    <string name="dash_thermal_unknown">Неизвестно</string>
+    <string name="dash_thermal_not_supported">Не поддерживается в этой версии Android</string>
+    <string name="dash_thermal_subtitle">Состояние теплового ограничения системы</string>
+    <string name="dash_power_subtitle_remaining">Осталось %1$.0f мА·ч</string>
+    <string name="dash_power_subtitle_na">Счётчик заряда недоступен</string>
+    <string name="dash_cpu_subtitle">Приблизительная оценка</string>
+
+    <string name="dash_memory_free">%1$s свободно</string>
+    <string name="dash_low_memory">система сообщает о нехватке памяти</string>
+    <string name="dash_battery_sensor">Датчик батареи</string>
+    <string name="dash_quick_action">Быстрое действие</string>
+    <string name="dash_boost_result">Освобождено %1$s · %2$d из %3$d приложений обновлено</string>
+
+    <!-- Analysis -->
+    <string name="analysis_title">Анализ</string>
+    <string name="analysis_subtitle">Сканирует хранилище на дубликаты, большие файлы и неиспользуемые приложения.</string>
+    <string name="analysis_start">Начать анализ</string>
+    <string name="analysis_rescan">Сканировать снова</string>
+    <string name="analysis_own_cache">Собственный кэш</string>
+    <string name="analysis_app_cache">Кэш приложения</string>
+    <string name="analysis_foreign_caches">Кэши других приложений (≥ 50 МБ)</string>
+    <string name="analysis_duplicates">Дублирующиеся файлы</string>
+    <string name="analysis_big_files">Большие файлы (&gt; 100 МБ)</string>
+    <string name="analysis_downloads">Загрузки</string>
+    <string name="analysis_unused_apps">Неиспользуемые приложения (&gt;60 дней)</string>
+    <string name="analysis_action_delete">Удалить</string>
+    <string name="analysis_action_open_info">Открыть сведения о приложении</string>
+    <string name="analysis_action_clean">Очистить</string>
+    <string name="analysis_action_open_folder">Открыть папку</string>
+    <string name="analysis_files_count">%1$d файлов · %2$s</string>
+    <string name="analysis_downloads_count">%1$d файлов в папке «Загрузки»</string>
+    <string name="analysis_dupes_summary">%1$d дубликатов в %2$d группах</string>
+    <string name="analysis_dupes_wasted">потрачено впустую: %1$s</string>
+    <string name="analysis_last_used_days">последний раз %1$d дней назад</string>
+    <string name="analysis_progress_own_cache">Собственный кэш…</string>
+    <string name="analysis_progress_big">Большие файлы…</string>
+    <string name="analysis_progress_downloads">Загрузки…</string>
+    <string name="analysis_progress_dupes">Дублирующиеся файлы…</string>
+    <string name="analysis_progress_unused">Неиспользуемые приложения…</string>
+    <string name="analysis_progress_foreign">Кэши других приложений…</string>
+    <string name="analysis_progress_done">Готово</string>
+
+    <string name="confirm_cache_title">Удалить кэш приложения?</string>
+    <string name="confirm_cache_message">%1$s будет освобождено из кэша приложения. Приложение не сбрасывается.</string>
+    <string name="confirm_dupes_title">Удалить дубликаты?</string>
+    <string name="confirm_dupes_message">ОДНА копия из каждой группы сохранится. %1$s будет освобождено.</string>
+    <string name="confirm_file_title">Удалить файл?</string>
+    <string name="confirm_file_message">\"%1$s\" (%2$s) будет безвозвратно удалён.</string>
+
+    <!-- Performance -->
+    <string name="perf_title">Производительность</string>
+    <string name="perf_presets">Профили</string>
+    <string name="perf_power_saver">Экономия энергии</string>
+    <string name="perf_balanced">Сбалансированный</string>
+    <string name="perf_performance">Производительность</string>
+    <string name="perf_setup_title">Разовая настройка открывает реальные профили</string>
+    <string name="perf_setup_modify">Изменение настроек</string>
+    <string name="perf_setup_dnd">Доступ к режиму «Не беспокоить»</string>
+    <string name="perf_devtools">Инструменты разработчика</string>
+    <string name="perf_devtools_explainer">Это настоящие переключатели Settings.Global, но Android выдаёт разрешение на их запись только через ADB или root — ни в приложении, ни в настройках такой возможности нет.</string>
+    <string name="perf_not_granted">Не предоставлено. Выполните это один раз с компьютера:</string>
+    <string name="perf_copy_command">Копировать команду</string>
+    <string name="perf_ran_it">Я выполнил — проверить снова</string>
+    <string name="perf_toggle_dont_keep">Не сохранять действия</string>
+    <string name="perf_toggle_dont_keep_desc">Уничтожать каждое действие, как только оно уходит в фон</string>
+    <string name="perf_toggle_gpu">Принудительный рендеринг GPU</string>
+    <string name="perf_toggle_gpu_desc">Включить аппаратное ускорение 2D для всех приложений</string>
+    <string name="perf_toggle_usb">Отладка по USB</string>
+    <string name="perf_toggle_usb_desc">Разрешить подключения ADB по USB</string>
+    <string name="perf_dev_options_explainer">Лимит фоновых процессов и отображение перерисовки GPU на большинстве версий Android не имеют публичного ключа настроек, поэтому никакое разрешение не сделает их переключаемыми здесь — открывается «Для разработчиков».</string>
+    <string name="perf_open_dev_options">Открыть «Для разработчиков»</string>
+    <string name="perf_open_display">Настройки дисплея и частоты обновления</string>
+    <string name="perf_reset_defaults">Сбросить переключатели выше к значениям по умолчанию</string>
+
+    <!-- Storage -->
+    <string name="storage_title">Хранилище</string>
+    <string name="storage_device">Хранилище устройства</string>
+    <string name="storage_used">%1$s использовано</string>
+    <string name="storage_free">%1$s свободно из %2$s</string>
+    <string name="storage_clean_up">Очистить сейчас</string>
+    <string name="storage_cleaning">Очистка…</string>
+    <string name="storage_freed_kb">Освобождено %1$d КБ</string>
+    <string name="storage_freed">Освобождено %1$s</string>
+    <string name="storage_breakdown">Разбивка</string>
+    <string name="storage_scanning">Сканирование установленных приложений…</string>
+    <string name="storage_apps">Приложения</string>
+    <string name="storage_cache">Кэш</string>
+    <string name="storage_photos_videos">Фото и видео</string>
+    <string name="storage_downloads">Загрузки</string>
+    <string name="storage_other">Другое</string>
+    <string name="storage_quick_tools">Быстрые инструменты</string>
+    <string name="storage_clear_all_cache">Очистить кэш всех приложений</string>
+    <string name="storage_manage_apps">Управление приложениями</string>
+    <string name="storage_manager">Диспетчер хранилища</string>
+    <string name="storage_open_downloads">Открыть «Загрузки»</string>
+    <string name="storage_grant_usage">Для подсчёта приложений и кэша нужен доступ к использованию (разово, без ADB).</string>
+    <string name="storage_grant_usage_btn">Предоставить доступ</string>
+    <string name="storage_grant_media">Для подсчёта фото, видео и загрузок нужен доступ к медиа.</string>
+    <string name="storage_grant_media_btn">Предоставить доступ к медиа</string>
+
+    <!-- Battery -->
+    <string name="battery_title">Батарея</string>
+    <string name="battery_health">Состояние: %1$s</string>
+    <string name="battery_quick_settings">Быстрые настройки</string>
+    <string name="battery_quick_settings_desc">Автояркость и вибрация требуют разрешения «Изменение системных настроек» (один переключатель, без ADB).</string>
+    <string name="battery_grant_modify">Предоставить «Изменение системных настроек»</string>
+    <string name="battery_auto_brightness">Автояркость</string>
+    <string name="battery_auto_brightness_desc">Регулировать яркость по окружающему освещению</string>
+    <string name="battery_haptic">Тактильная отдача</string>
+    <string name="battery_haptic_desc">Вибрация при взаимодействии и звонках</string>
+    <string name="battery_push_settings">Настройки push-уведомлений</string>
+    <string name="battery_screen_timeout">Настройки тайм-аута экрана</string>
+    <string name="battery_system_settings">Системные настройки</string>
+    <string name="battery_system_settings_desc">Экономия энергии и тёмная тема требуют WRITE_SECURE_SETTINGS — только ADB/root, как и на вкладке инструментов разработчика. Предоставьте один раз там, и оба будут работать здесь.</string>
+    <string name="battery_saver">Экономия энергии</string>
+    <string name="battery_saver_desc">Снизить производительность для продления работы батареи</string>
+    <string name="battery_dark_mode">Тёмная тема</string>
+    <string name="battery_dark_mode_desc">Переключить системную тему на тёмную</string>
+    <string name="battery_usage">Сведения о расходе батареи</string>
+    <string name="battery_open_display">Настройки дисплея и частоты обновления</string>
+
+    <!-- Permissions -->
+    <string name="perm_title">Разрешения</string>
+    <string name="perm_subtitle">Предоставляйте по одному. Всё необязательно — приложение корректно работает без них и объясняет, что каждое открывает.</string>
+    <string name="perm_granted">Предоставлено</string>
+    <string name="perm_not_granted">Не предоставлено</string>
+    <string name="perm_recheck">Проверить снова</string>
+    <string name="perm_adb_section">Только ADB (необязательно)</string>
+    <string name="perm_adb_explainer">WRITE_SECURE_SETTINGS открывает экономию энергии, тёмную тему и переключатели разработчика. Android выдаёт его ТОЛЬКО с компьютера:</string>
+    <string name="perm_copy_command">Копировать команду</string>
+    <string name="perm_usage_title">Доступ к использованию</string>
+    <string name="perm_usage_why">Открывает размеры кэша приложений, разбивку хранилища и поиск неиспользуемых приложений.</string>
+    <string name="perm_usage_grant">Открыть доступ к использованию</string>
+    <string name="perm_files_title">Доступ ко всем файлам</string>
+    <string name="perm_files_why">Позволяет анализатору видеть все файлы, а не только медиа, и удалять без системного диалога.</string>
+    <string name="perm_files_grant">Открыть доступ ко всем файлам</string>
+    <string name="perm_write_title">Изменение системных настроек</string>
+    <string name="perm_write_why">Требуется для яркости, тайм-аута экрана, авто-поворота и применения профилей.</string>
+    <string name="perm_write_grant">Открыть доступ к записи настроек</string>
+    <string name="perm_dnd_title">Доступ к режиму «Не беспокоить»</string>
+    <string name="perm_dnd_why">Нужен для переключателя DND в профилях «Экономия энергии» и «Сбалансированный».</string>
+    <string name="perm_dnd_grant">Открыть доступ к DND</string>
+    <string name="perm_media_title">Доступ к медиа</string>
+    <string name="perm_media_why">Позволяет подсчитать фото, видео и загрузки в разбивке хранилища.</string>
+    <string name="perm_media_grant">Предоставить доступ к медиа</string>
+
+    <!-- Settings tab -->
+    <string name="settings_title">Настройки</string>
+    <string name="settings_appearance">Внешний вид</string>
+    <string name="settings_mode_day">День</string>
+    <string name="settings_mode_dark">Ночь</string>
+    <string name="settings_language">Язык</string>
+    <string name="settings_language_system">Системный</string>
+    <string name="settings_about">О приложении</string>
+    <string name="settings_about_name">Oh Shoot</string>
+    <string name="settings_about_desc">Инструмент очистки и системной диагностики Android в один тап. Каждое действие — реальный системный вызов! Никаких фейковых прогресс-баров и плацебо-переключателей.</string>
+    <string name="settings_about_author">Сделано bamBi4k</string>
+    <string name="settings_light">Светлая</string>
+    <string name="settings_dark">Тёмная</string>
+
+    <!-- Widget -->
+    <string name="widget_app_name">Oh Shoot</string>
+    <string name="widget_action_clean">Очистить</string>
+    <string name="widget_action_running">Очистка…</string>
+    <string name="widget_action_again">Очистить снова</string>
+
+    <string name="widget_status_running">Работа…</string>
+    <string name="widget_status_done">Освобождено %1$s · %2$d приложений обновлено</string>
+    <string name="cleaner_widget_label">Очистка Oh Shoot</string>
+    <string name="cleaner_widget_description">Очистка в один тап: освобождает кэш и просит Android выгрузить фоновые процессы.</string>
+
+    <!-- Dashboard widget -->
+    <string name="dashboard_widget_description">Состояние устройства с первого взгляда: память, хранилище, батарея и температура.</string>
+    <string name="dash_short_ram">ОЗУ</string>
+    <string name="dash_short_storage">Диск</string>
+    <string name="dash_short_batt">Бат.</string>
+    <string name="dash_short_temp">Темп.</string>
+    <string name="dash_short_wifi">Wi-Fi (30 дн.)</string>
+    <string name="dash_short_mobile">Моб. (30 дн.)</string>
+    <string name="dash_tile_used_of">%1$s из %2$s</string>
+    <string name="dash_widget_tap_to_refresh">Нажмите для обновления в приложении</string>
+
+    <!-- File preview -->
+    <string name="preview_no_thumbnail">Предпросмотр недоступен</string>
+    <string name="action_close">Закрыть</string>
+
+    <string name="analysis_dupes_keep_first">этот сохраняется</string>
+
+    <string name="battery_exempt_title">Надёжность в фоне</string>
+    <string name="battery_exempt_desc">Исключите Oh Shoot из оптимизации батареи, чтобы запланированные очистки и виджеты запускались вовремя. Без этого Android может откладывать их на часы.</string>
+    <string name="battery_exempt_grant">Запросить исключение</string>
+    <string name="battery_exempt_granted">Исключено — фоновая работа будет запускаться надёжно</string>
+    <string name="battery_exempt_open_settings">Открыть настройки оптимизации батареи</string>
+
+    <string name="dash_network">Сеть (30 дней)</string>
+    <string name="dash_network_subtitle">Wi-Fi: %1$s · Мобильная: %2$s</string>
+    <string name="dash_network_unavailable">Предоставьте доступ к использованию, чтобы видеть сетевую статистику</string>
+    <string name="dash_network_unavailable_action">Предоставить доступ</string>
+
+    <string name="storage_top_apps">Крупнейшие приложения</string>
+    <string name="storage_top_apps_subtitle">Приложения по суммарному размеру на диске</string>
+    <string name="storage_top_apps_needs_usage">Предоставьте доступ к использованию, чтобы увидеть список приложений по размеру</string>
+    <string name="storage_top_apps_breakdown">Прил.: %1$s · Данные: %2$s · Кэш: %3$s</string>
+    <string name="storage_show_more">Показать больше</string>
+    <string name="storage_show_less">Показать меньше</string>
+
+    <string name="analysis_scope_title">Область сканирования</string>
+    <string name="analysis_scope_images">Изображения</string>
+    <string name="analysis_scope_videos">Видео</string>
+    <string name="analysis_scope_audio">Аудио</string>
+    <string name="analysis_scope_downloads">Загрузки</string>
+    <string name="analysis_scope_all">Все медиа</string>
+    <string name="analysis_scope_min_size">Минимальный размер: %1$s</string>
+
+    <string name="auto_clean_title">Запланированная очистка</string>
+    <string name="auto_clean_desc">Запускает ту же очистку кэша раз в неделю в фоне. Для надёжности требуется исключение из оптимизации батареи.</string>
+    <string name="auto_clean_enabled">Еженедельная автоочистка включена</string>
+    <string name="auto_clean_disabled">Еженедельная автоочистка выключена</string>
+    <string name="notif_channel_auto_clean">Автоочистка</string>
+    <string name="notif_channel_auto_clean_desc">Уведомляет после запланированной очистки</string>
+    <string name="notif_auto_clean_title">Запланированная очистка выполнена</string>
+    <string name="notif_auto_clean_text">Освобождено %1$s</string>
+
+    <string name="perm_notif_title">Уведомления</string>
+    <string name="perm_notif_why">Требуется для уведомлений после запланированных очисток. Android 13+.</string>
+    <string name="perm_notif_grant">Разрешить уведомления</string>
+
+    <string name="dash_short_cpu">ЦП</string>
+    <string name="widget_open_dashboard">Открыть панель</string>
+
+    <string name="dash_battery_temp">Темп. батареи</string>
+    <string name="dash_free_space">Свободно</string>
+    <string name="dash_free_space_subtitle">доступно для новых файлов</string>
+
+    <string name="boost_freed">Освобождено %1$s</string>
+    <string name="boost_no_cache">Кэш уже чист</string>
+    <string name="boost_evicted">%1$d приложений перезапущено</string>
+    <string name="boost_mem">%1$d МБ ОЗУ освобождено</string>
+    <string name="dash_deep_clean">Глубокая очистка (вручную)</string>
+    <string name="dash_deep_clean_hint">Android блокирует автоматическое удаление кэша других приложений. Глубокая очистка проведёт вас вручную — 30 секунд, реальные гигабайты.</string>
+
+    <string name="tile_summary">Очищено %1$s из %2$d приложений за %3$s</string>
+    <string name="tile_summary_no_cache">Подготовлено %1$d приложений за %2$s</string>
+
+    <string name="boost_duration">за %1$s</string>
+
+    <string name="selection_selected">выбрано</string>
+    <string name="confirm_multi_title">Удалить %1$d файлов?</string>
+    <string name="confirm_multi_message">%1$d файлов общим размером %2$s будут безвозвратно удалены.</string>
+
+    <string name="network_edit_plan">Изменить план</string>
+    <string name="network_set_plan">Задать план</string>
+    <string name="network_mobile_of_cap">%1$s из %2$s использовано</string>
+    <string name="network_no_plan_set">План не задан — нажмите для настройки</string>
+    <string name="network_remaining">Осталось %1$s</string>
+    <string name="network_over_cap">Превышен лимит плана</string>
+    <string name="network_wifi">Wi-Fi: %1$s</string>
+    <string name="data_plan_title">Мобильный тариф</string>
+    <string name="data_plan_subtitle">Задайте месячный лимит мобильных данных, чтобы приложение показывало расход относительно лимита.</string>
+    <string name="data_plan_cap_label">Месячный лимит</string>
+    <string name="data_plan_unlimited">Безлимитный</string>
+    <string name="data_plan_cycle_label">Начало цикла</string>
+    <string name="data_plan_cycle_hint">день месяца</string>
+    <string name="action_save">Сохранить</string>
+
+    <string name="data_usage_widget_description">Расход мобильных данных относительно лимита плана.</string>
+
+    <string name="notif_channel_data_usage">Расход данных</string>
+    <string name="notif_channel_data_usage_desc">Предупреждает при приближении к лимиту</string>
+    <string name="notif_data_near_cap">Приближение к лимиту данных</string>
+    <string name="notif_data_over_cap">Лимит данных превышен</string>
+    <string name="notif_data_usage_body">%1$s из %2$s использовано в этом цикле</string>
+
+    <string name="data_widget_used_of_cap">%1$s / %2$s</string>
+
+    <string name="data_widget_remaining">Осталось %1$s</string>
+
+    <string name="tile_label">Очистить</string>
+
+    <string name="analysis_unused_none">Неиспользуемых приложений нет — все открываются регулярно.</string>
+
+    <string name="settings_about_hint">Продолжайте нажимать… %1$d/10</string>
+    <string name="easter_egg_title">Вы нашли это! 🎉</string>
+    <string name="easter_egg_body">Привет, альфа-тестер. Вы нажали эту карточку 10 раз. Никто вам не говорил. Никто не просил. Вы просто сделали это. Именно на такой энергии построено это приложение.\n\nСпасибо, что вы здесь так рано. Спасибо за отчёты об ошибках. Спасибо, что вам не всё равно до мелочей. Это для вас.</string>
+    <string name="easter_egg_signature">— bamBi4k</string>
+    <string name="easter_egg_close">Закрыть</string>
+
+    <string name="analysis_unused_truncated">Ваш телефон хранит историю использования приложений всего около %1$d дней. Невозможно определить, какие приложения не открывались 60 дней. Это ограничение ОС устройства, а не Oh Shoot.</string>
+
+    <string name="dash_charge_remaining">Остаток заряда</string>
+    <string name="dash_charge_value">%1$d мА·ч</string>
+    <string name="dash_charge_of_full">из %1$d мА·ч полного</string>
+    <string name="dash_charge_na">счётчик заряда недоступен</string>
+
+    <string name="perf_power_saver_desc">Снижает яркость, тайм-аут и частоту обновления для экономии батареи</string>
+    <string name="perf_balanced_desc">Повседневные значения — разумно, без сюрпризов</string>
+    <string name="perf_performance_desc">Максимальная яркость, длинный тайм-аут, быстрые анимации</string>
+    <string name="perf_needs_access">Этому профилю нужен разовый доступ для применения всех его настроек.</string>
+    <string name="perf_grant_modify">Изменение настроек</string>
+    <string name="perf_grant_dnd">Доступ к DND</string>
+    <string name="perf_devtools_hint">Некоторые полезные системные настройки находятся в «Для разработчиков». Oh Shoot может перейти туда напрямую.</string>
+
+    <string name="dash_cpu_unavailable_action">Открыть настройки батареи</string>
+
+    <string name="dash_battery_short">Батарея</string>
+    <string name="dash_temperature_short">Темп.</string>
+
+    <string name="easter_egg_unlock_title">★ АЛЬФА-ОСНОВАТЕЛЬ РАЗБЛОКИРОВАН ★</string>
+    <string name="easter_egg_unlock_body">Вы нашли пасхалку в альфа-сборке. В знак благодарности тема «Альфа-основатель» теперь ваша — навсегда. Она не исчезнет даже в будущих обновлениях.</string>
+    <string name="easter_egg_apply_theme">Применить тему «Альфа-основатель»</string>
+    <string name="settings_founder_theme_name">Альфа-основатель</string>
+
+    <string name="widget_status_idle">Нажмите на логотип для очистки</string>
+
+    <!-- Search + sort -->
+    <string name="analysis_search_hint">Поиск файлов…</string>
+    <string name="analysis_sort_title">Сортировать по</string>
+    <string name="analysis_sort_size_desc">Размер (сначала большие)</string>
+    <string name="analysis_sort_size_asc">Размер (сначала меньшие)</string>
+    <string name="analysis_sort_name">Имя (А–Я)</string>
+    <string name="analysis_sort_date">Дата (сначала новые)</string>
+    <string name="analysis_no_matches">Нет файлов, соответствующих поиску.</string>
+
+    <!-- Last scan -->
+    <string name="analysis_last_scan_never">Никогда не сканировалось</string>
+    <string name="analysis_last_scan_seconds">Сканировано %1$d секунд назад</string>
+    <string name="analysis_last_scan_minutes">Сканировано %1$d минут назад</string>
+    <string name="analysis_last_scan_hours">Сканировано %1$d часов назад</string>
+    <string name="analysis_last_scan_days">Сканировано %1$d дней назад</string>
+    <string name="analysis_last_scan_weeks">Сканировано %1$d недель назад</string>
+
+    <!-- Delete confirmation -->
+    <string name="delete_toast_single">Удалён 1 файл, освобождено %1$s</string>
+    <string name="delete_toast_multi">Удалено %1$d файлов, освобождено %2$s</string>
+
+    <string name="analysis_btn_search">Поиск</string>
+    <string name="analysis_btn_sort">Сортировка</string>
+
+    <string name="analysis_stale_message">Данные могли устареть — приложение было очищено после последнего сканирования.</string>
+    <string name="analysis_stale_action">Пересканировать</string>
+
+    <string name="row_menu_preview">Предпросмотр</string>
+    <string name="row_menu_open_in_files">Открыть в «Файлах»</string>
+    <string name="row_menu_copy_path">Копировать путь</string>
+
+    <string name="data_widget_mobile_label">Мобильная</string>
+    <string name="data_widget_wifi_label">Wi-Fi</string>
+    <string name="data_widget_wifi_subtitle">этот цикл</string>
+    <string name="data_widget_remaining_label">Осталось</string>
+    <string name="data_widget_remaining_subtitle">в этом цикле</string>
+    <string name="data_widget_plan_label">Использовано</string>
+    <string name="data_widget_no_plan_short">План не задан</string>
+    <string name="data_widget_over">Лимит плана достигнут</string>
+    <string name="data_widget_of_cap">из %1$s плана</string>
+    <string name="data_widget_of_cap_short">из %1$s</string>
+    <string name="data_widget_remaining_word">осталось</string>
+    <string name="data_widget_no_cap">План не задан — нажмите для настройки</string>
+
+    <string name="scan_notif_channel">Прогресс сканирования</string>
+    <string name="scan_notif_channel_desc">Показывает прогресс, пока Oh Shoot анализирует хранилище</string>
+    <string name="scan_notif_title">Анализ хранилища…</string>
+    <string name="scan_notif_starting">Запуск…</string>
+
+    <string name="shortcut_clean_short">Очистить</string>
+    <string name="shortcut_clean_long">Очистить кэш и фоновые приложения</string>
+    <string name="shortcut_analyse_short">Анализ</string>
+    <string name="shortcut_analyse_long">Найти дубликаты, большие файлы, неиспользуемые приложения</string>
+    <string name="shortcut_dashboard_short">Панель</string>
+    <string name="shortcut_dashboard_long">Открыть панель Oh Shoot</string>
+
+    <string name="perm_guide_start">Предоставить всё (с подсказками)</string>
+    <string name="perm_guide_step">ШАГ %1$d ИЗ %2$d</string>
+    <string name="perm_guide_skip">Пропустить</string>
+    <string name="perm_guide_open">Открыть настройки</string>
+    <string name="perm_guide_done_title">Всё готово!</string>
+    <string name="perm_guide_done_body">Вы прошли по всем разрешениям. К любому из них можно вернуться из списка ниже.</string>
+
+    <string name="info_got_it">Понятно</string>
+
+    <string name="info_battery_time_title">О времени работы батареи</string>
+    <string name="info_battery_time_body">Оценка времени до разрядки батареи на основе текущего уровня заряда и текущего энергопотребления телефона. Реальное использование варьируется — запуск игры или включение GPS сократят это время, простой с выключенным экраном увеличит.\n\nНа устройствах без работающего датчика топлива батареи (включая большинство Samsung) эта оценка недоступна, и карточка показывает только время последней полной зарядки.</string>
+
+    <string name="info_thermal_title">О тепловом режиме</string>
+    <string name="info_thermal_body">Android сообщает «тепловое состояние» на основе нагрева процессора и батареи телефона. Когда становится жарко, Android замедляет телефон для самозащиты — это и отражает карточка.\n\nНорма: без ограничений.\nСлабое / Умеренное / Сильное: Android постепенно снижает производительность.\nКритическое и выше: телефон может отключиться для охлаждения.</string>
+
+    <string name="info_network_title">Об использовании сети</string>
+    <string name="info_network_body">Ваш расход мобильных данных за текущий расчётный цикл в сравнении с заданным лимитом. Wi-Fi учитывается отдельно и не входит в план.\n\nДата начала цикла важна — если она задана неверно, цифры не совпадут с приложением оператора. Нажмите «Изменить план», чтобы исправить.</string>
+
+    <string name="info_cpu_title">О загрузке ЦП</string>
+    <string name="info_cpu_body">Общая загрузка ЦП всеми приложениями. Начиная с Android 8 это число доступно только системным приложениям — поэтому на большинстве телефонов оно отображается как недоступное. Мы используем приблизительную оценку, когда устройство случайно позволяет.</string>
+
+    <string name="dash_battery_time">Время работы</string>
+    <string name="battery_time_to_empty">до разрядки</string>
+    <string name="battery_time_to_full">до полной</string>
+    <string name="battery_time_estimate_subtitle">Живая оценка от датчика топлива</string>
+    <string name="battery_time_last_full_subtitle">Последняя полная зарядка</string>
+    <string name="battery_time_last_full_unavailable">Зарядите до 100% для начала отслеживания</string>
+    <string name="battery_time_na">—</string>
+    <string name="battery_time_ago">назад</string>
+    <string name="battery_time_just_now">Только что</string>
+
+    <string name="battery_time_live_hint">Живая оценка — зависит от использования</string>
+
+    <string name="storage_guided_clean">Ручная очистка кэша</string>
+    <string name="cache_clean_title">Ручная очистка кэша</string>
+    <string name="cache_clean_step">Шаг %1$d из %2$d</string>
+    <string name="cache_clean_of_cache">кэша для очистки</string>
+    <string name="cache_clean_step1">Нажмите «Открыть сведения о приложении» ниже.</string>
+    <string name="cache_clean_step2">В системном экране нажмите «Память и кэш», затем «Очистить кэш».</string>
+    <string name="cache_clean_step3">Вернитесь сюда. Мы перейдём к следующему приложению.</string>
+    <string name="cache_clean_open_info">Открыть сведения о приложении</string>
+    <string name="cache_clean_open_again">Открыть снова</string>
+    <string name="cache_clean_did_you_clear">Вы очистили кэш?</string>
+    <string name="cache_clean_mark_cleared">Да, очищено</string>
+    <string name="cache_clean_skip">Пропустить это приложение</string>
+    <string name="cache_clean_back">Назад</string>
+    <string name="cache_clean_finish_early">Завершить досрочно</string>
+    <string name="cache_clean_done_title">Очистка завершена</string>
+    <string name="cache_clean_done_freed">освобождено в ваших приложениях</string>
+    <string name="cache_clean_done_cleared">Приложений очищено</string>
+    <string name="cache_clean_done_skipped">Приложений пропущено</string>
+    <string name="cache_clean_done_close">Готово</string>
+    <string name="storage_preparing">Подготовка…</string>
+    <string name="storage_no_cache_to_clean">Сейчас нет приложений со значительным кэшем. Можно всё равно запустить быструю очистку.</string>
+    <string name="storage_quick_clean_fallback">Запустить быструю очистку</string>
+
+    <string name="a11y_service_label">Автоочистка кэша</string>
+    <string name="a11y_service_summary">Автоматизирует очистку кэша в настройках</string>
+    <string name="a11y_service_description">Автоматизирует нажатия, необходимые для очистки кэша других приложений. Работает только когда вы запускаете очистку из Oh Shoot — в остальное время служба ничего не делает и не читает и не хранит никаких данных.</string>
+
+    <string name="a11y_onboarding_title">Автоочистка доступна</string>
+    <string name="a11y_onboarding_subtitle">Разовая настройка, компьютер не нужен</string>
+    <string name="a11y_onboarding_explain">Включите службу «Автоочистка кэша» в настройках специальных возможностей. Oh Shoot будет переходить по настройкам от вашего имени и автоматически очищать кэш каждого приложения — без ваших нажатий. Служба ничего не делает, пока вы не запустите очистку из приложения.</string>
+    <string name="a11y_onboarding_action">Включить в специальных возможностях</string>
+    <string name="a11y_onboarding_privacy">Приватность: служба работает только во время запущенной вами очистки. Она не читает содержимое экрана и ничего не сохраняет. Её можно отключить в любой момент в Настройки → Специальные возможности.</string>
+
+    <string name="storage_auto_clean">Автоочистка кэша</string>
+    <string name="auto_clean_done_title">Автоочистка завершена</string>
+    <string name="auto_clean_done_body">Очищено %1$d приложений. Пропущено %2$d.</string>
+
+    <string name="storage_try_again_lower_threshold">Попробовать с меньшими приложениями (1 МБ+)</string>
+
+    <string name="auto_clean_mass_failure">Автоочистка не сработала на этом устройстве — большинство приложений не удалось очистить автоматически. Попробуйте ручную очистку ниже.</string>
+    <string name="storage_auto_clean_working">Работа…</string>
+    <string name="storage_auto_clean_cancel">Отменить автоочистку</string>
+
+    <!-- Shizuku card -->
+    <string name="shizuku_title">Shizuku (расширенный режим)</string>
+    <string name="shizuku_state_not_installed">Не установлено</string>
+    <string name="shizuku_state_not_running">Установлено, не запущено</string>
+    <string name="shizuku_state_permission_required">Готово к подключению</string>
+    <string name="shizuku_state_ready">Подключено</string>
+
+    <string name="shizuku_body_not_installed">Установите Shizuku, чтобы открыть более быструю очистку кэша, реальное управление фоновыми приложениями и безопасные настройки без команд ADB.</string>
+    <string name="shizuku_body_not_running">Shizuku установлен, но не запущен. Откройте приложение Shizuku и запустите его через отладку по Wi-Fi или ADB.</string>
+    <string name="shizuku_body_permission_required">Shizuku запущен. Предоставьте этому приложению разрешение на его использование.</string>
+    <string name="shizuku_body_ready">Все расширенные функции активны.</string>
+    <string name="shizuku_info_unlock_1">Надёжно останавливать приложения — тот же стоп, что и в настройках</string>
+
+    <string name="shizuku_action_install">Установить Shizuku</string>
+    <string name="shizuku_action_open">Открыть Shizuku</string>
+    <string name="shizuku_action_grant">Предоставить разрешение</string>
+
+    <string name="shizuku_info_title">О Shizuku</string>
+    <string name="shizuku_info_body_1">Shizuku — отдельное приложение с открытым исходным кодом, которое позволяет другим приложениям использовать разрешения уровня ADB без root. Именно так приложения вроде нашего могут делать то, что Android обычно блокирует для обычных приложений.</string>
+    <string name="shizuku_info_unlocks">С подключённым Shizuku Oh Shoot может:</string>
+    <string name="shizuku_info_unlock_2">Правильно управлять фоновыми приложениями, а не просто вежливо просить</string>
+    <string name="shizuku_info_unlock_3">Изменять защищённые системные настройки без компьютера</string>
+    <string name="shizuku_info_body_2">Shizuku полностью необязателен. Всё в этом приложении работает и без него — Shizuku лишь делает расширенные функции быстрее и надёжнее. Вы можете отключить его в любой момент, остановив Shizuku в его собственном приложении.</string>
+
+    <!-- Enhanced Performance controls (Shizuku only) -->
+    <string name="perf_enhanced_title">Расширенное управление</string>
+    <string name="perf_enhanced_subtitle">Эти параметры используют Shizuku для прямого изменения системных настроек. Они остаются активными, пока вы не отключите их или не восстановите значения по умолчанию.</string>
+
+    <string name="perf_anim_title">Скорость анимации</string>
+    <string name="perf_anim_desc">Медленные анимации делают телефон вялым. Ускорение делает его быстрее без изменения производительности.</string>
+    <string name="perf_anim_speed_off">Выкл. (мгновенно)</string>
+    <string name="perf_anim_speed_half">Быстро (0,5×)</string>
+    <string name="perf_anim_speed_normal">Обычно (1×)</string>
+
+    <string name="perf_bg_limit_title">Лимит фоновых процессов</string>
+    <string name="perf_bg_limit_desc">Сколько фоновых приложений Android может держать в памяти. Меньше — больше свободной ОЗУ, но приложения чаще перезагружаются при возврате.</string>
+    <string name="perf_bg_limit_default">Системное</string>
+    <string name="perf_bg_limit_standard">Стандартный</string>
+    <string name="perf_bg_limit_1">Не более 1 процесса</string>
+    <string name="perf_bg_limit_2">Не более 2 процессов</string>
+    <string name="perf_bg_limit_3">Не более 3 процессов</string>
+    <string name="perf_bg_limit_4">Не более 4 процессов</string>
+
+    <string name="perf_dont_keep_title">Не сохранять действия</string>
+    <string name="perf_dont_keep_desc">Уничтожать каждое действие, как только вы его покидаете. Экономит ОЗУ, но при возврате экраны придётся загружать заново.</string>
+
+    <string name="perf_kill_all_title">Очистить фоновые процессы</string>
+    <string name="perf_kill_all_desc">Завершает все фоновые процессы, которые Android может безопасно завершить. Приложения на переднем плане, музыка, навигация и звонки никогда не затрагиваются.</string>
+    <string name="perf_kill_all_button">Очистить фон</string>
+    <string name="perf_kill_all_done">Фоновые процессы очищены</string>
+
+    <string name="perf_reset_enhanced">Восстановить все значения по умолчанию</string>
+    <string name="perf_reset_enhanced_done">Расширенные настройки восстановлены</string>
+
+    <string name="perf_enhanced_unavailable">Расширенное управление требует Shizuku. Подключите его на вкладке «Разрешения», чтобы открыть эти параметры.</string>
+
+    <string name="widget_help_title">Синхронизация виджетов</string>
+    <string name="widget_help_body">Виджеты могут отставать на несколько секунд от изменения темы или языка.\n\nЕсли виджет выглядит устаревшим, откройте и закройте приложение один раз или удалите и добавьте виджет заново для мгновенного обновления.</string>
+
+</resources>

@@ -1,0 +1,534 @@
+<resources>
+    <string name="app_name">Oh Shoot</string>
+
+    <string name="tab_dashboard">Panel</string>
+    <string name="tab_analysis">Análisis</string>
+    <string name="tab_performance">Rendimiento</string>
+    <string name="tab_storage">Almacenamiento</string>
+    <string name="tab_battery">Batería</string>
+    <string name="tab_permissions">Permisos</string>
+    <string name="tab_settings">Ajustes</string>
+
+    <string name="action_delete">Eliminar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_open">Abrir</string>
+    <string name="action_recheck">Volver a comprobar</string>
+    <string name="action_copy">Copiar</string>
+    <string name="unavailable">No disponible</string>
+    <string name="never_used">nunca usado</string>
+    <string name="charged">Cargando</string>
+    <string name="not_charging">Sin cargar</string>
+
+    <string name="dash_title">Panel</string>
+    <string name="dash_memory">Memoria</string>
+    <string name="dash_storage">Almacenamiento</string>
+    <string name="dash_battery">Batería</string>
+    <string name="dash_temperature">Temperatura</string>
+    <string name="dash_thermal">Térmico</string>
+    <string name="dash_power_draw">Consumo</string>
+    <string name="dash_cpu">Carga de CPU</string>
+    <string name="dash_boost">Optimización en un toque</string>
+    <string name="dash_boosting">Optimizando…</string>
+    <string name="dash_thermal_nominal">Normal</string>
+    <string name="dash_thermal_light">Leve</string>
+    <string name="dash_thermal_moderate">Moderado</string>
+    <string name="dash_thermal_severe">Grave</string>
+    <string name="dash_thermal_critical">Crítico</string>
+    <string name="dash_thermal_emergency">Emergencia</string>
+    <string name="dash_thermal_shutdown">Apagado</string>
+    <string name="dash_thermal_unknown">Desconocido</string>
+    <string name="dash_thermal_not_supported">No compatible con esta versión de Android</string>
+    <string name="dash_thermal_subtitle">Estado térmico del sistema</string>
+    <string name="dash_power_subtitle_remaining">%1$.0f mAh restantes</string>
+    <string name="dash_power_subtitle_na">Contador de carga no disponible</string>
+    <string name="dash_cpu_subtitle">Estimación aproximada</string>
+
+    <string name="dash_memory_free">%1$s libres</string>
+    <string name="dash_low_memory">el sistema informa de memoria baja</string>
+    <string name="dash_battery_sensor">Sensor de batería</string>
+    <string name="dash_quick_action">Acción rápida</string>
+    <string name="dash_boost_result">%1$s liberados · %2$d/%3$d apps actualizadas</string>
+
+    <string name="analysis_title">Análisis</string>
+    <string name="analysis_subtitle">Analiza el almacenamiento en busca de duplicados, archivos grandes y apps sin usar.</string>
+    <string name="analysis_start">Iniciar análisis</string>
+    <string name="analysis_rescan">Analizar de nuevo</string>
+    <string name="analysis_own_cache">Caché propia</string>
+    <string name="analysis_app_cache">Caché de la app</string>
+    <string name="analysis_foreign_caches">Cachés de otras apps (≥ 50 MB)</string>
+    <string name="analysis_duplicates">Archivos duplicados</string>
+    <string name="analysis_big_files">Archivos grandes (&gt; 100 MB)</string>
+    <string name="analysis_downloads">Descargas</string>
+    <string name="analysis_unused_apps">Apps sin usar (&gt;60 días)</string>
+    <string name="analysis_action_delete">Eliminar</string>
+    <string name="analysis_action_open_info">Abrir info de app</string>
+    <string name="analysis_action_clean">Limpiar</string>
+    <string name="analysis_action_open_folder">Abrir carpeta</string>
+    <string name="analysis_files_count">%1$d archivos · %2$s</string>
+    <string name="analysis_downloads_count">%1$d archivos en la carpeta Descargas</string>
+    <string name="analysis_dupes_summary">%1$d duplicados en %2$d grupos</string>
+    <string name="analysis_dupes_wasted">desperdiciado: %1$s</string>
+    <string name="analysis_last_used_days">usado por última vez hace %1$d días</string>
+    <string name="analysis_progress_own_cache">Caché propia…</string>
+    <string name="analysis_progress_big">Archivos grandes…</string>
+    <string name="analysis_progress_downloads">Descargas…</string>
+    <string name="analysis_progress_dupes">Archivos duplicados…</string>
+    <string name="analysis_progress_unused">Apps sin usar…</string>
+    <string name="analysis_progress_foreign">Cachés ajenas…</string>
+    <string name="analysis_progress_done">Listo</string>
+
+    <string name="confirm_cache_title">¿Eliminar caché de la app?</string>
+    <string name="confirm_cache_message">Se liberarán %1$s de la caché de la app. La app no se restablece.</string>
+    <string name="confirm_dupes_title">¿Eliminar duplicados?</string>
+    <string name="confirm_dupes_message">Se conserva UNA copia por grupo. Se liberarán %1$s.</string>
+    <string name="confirm_file_title">¿Eliminar archivo?</string>
+    <string name="confirm_file_message">\"%1$s\" (%2$s) se eliminará permanentemente.</string>
+
+    <string name="perf_title">Rendimiento</string>
+    <string name="perf_presets">Preajustes</string>
+    <string name="perf_power_saver">Ahorro de energía</string>
+    <string name="perf_balanced">Equilibrado</string>
+    <string name="perf_performance">Rendimiento</string>
+    <string name="perf_setup_title">La configuración inicial desbloquea preajustes reales</string>
+    <string name="perf_setup_modify">Modificar ajustes</string>
+    <string name="perf_setup_dnd">Acceso a No molestar</string>
+    <string name="perf_devtools">Herramientas de desarrollo</string>
+    <string name="perf_devtools_explainer">Son conmutadores reales de Settings.Global, pero Android solo permite escribirlos con ADB o root — no existe ninguna vía desde la app ni desde Ajustes.</string>
+    <string name="perf_not_granted">No concedido. Ejecuta esto una vez desde un ordenador:</string>
+    <string name="perf_copy_command">Copiar comando</string>
+    <string name="perf_ran_it">Lo ejecuté — volver a comprobar</string>
+    <string name="perf_toggle_dont_keep">No mantener actividades</string>
+    <string name="perf_toggle_dont_keep_desc">Destruir cada actividad en cuanto pasa a segundo plano</string>
+    <string name="perf_toggle_gpu">Forzar renderizado por GPU</string>
+    <string name="perf_toggle_gpu_desc">Forzar aceleración 2D por hardware para todas las apps</string>
+    <string name="perf_toggle_usb">Depuración USB</string>
+    <string name="perf_toggle_usb_desc">Permitir conexiones ADB por USB</string>
+    <string name="perf_dev_options_explainer">El límite de procesos en segundo plano y la visualización de sobrecarga de GPU no están respaldados por una clave pública de Settings en la mayoría de versiones de Android, así que ningún permiso los hace conmutables aquí — se abren las Opciones de desarrollador en su lugar.</string>
+    <string name="perf_open_dev_options">Abrir Opciones de desarrollador</string>
+    <string name="perf_open_display">Ajustes de pantalla y frecuencia de refresco</string>
+    <string name="perf_reset_defaults">Restablecer los conmutadores anteriores</string>
+
+    <string name="storage_title">Almacenamiento</string>
+    <string name="storage_device">Almacenamiento del dispositivo</string>
+    <string name="storage_used">%1$s usados</string>
+    <string name="storage_free">%1$s libres de %2$s</string>
+    <string name="storage_clean_up">Limpiar ahora</string>
+    <string name="storage_cleaning">Limpiando…</string>
+    <string name="storage_freed_kb">%1$d KB liberados</string>
+    <string name="storage_freed">%1$s liberados</string>
+    <string name="storage_breakdown">Desglose</string>
+    <string name="storage_scanning">Analizando apps instaladas…</string>
+    <string name="storage_apps">Apps</string>
+    <string name="storage_cache">Caché</string>
+    <string name="storage_photos_videos">Fotos y vídeos</string>
+    <string name="storage_downloads">Descargas</string>
+    <string name="storage_other">Otros</string>
+    <string name="storage_quick_tools">Herramientas rápidas</string>
+    <string name="storage_clear_all_cache">Borrar caché de todas las apps</string>
+    <string name="storage_manage_apps">Gestionar apps instaladas</string>
+    <string name="storage_manager">Gestor de almacenamiento</string>
+    <string name="storage_open_downloads">Abrir Descargas</string>
+    <string name="storage_grant_usage">Los totales de apps y caché necesitan acceso de uso (una vez, sin ADB).</string>
+    <string name="storage_grant_usage_btn">Conceder acceso de uso</string>
+    <string name="storage_grant_media">Los totales de fotos, vídeos y descargas necesitan acceso a medios.</string>
+    <string name="storage_grant_media_btn">Conceder acceso a medios</string>
+
+    <string name="battery_title">Batería</string>
+    <string name="battery_health">Salud: %1$s</string>
+    <string name="battery_quick_settings">Ajustes rápidos</string>
+    <string name="battery_quick_settings_desc">El brillo automático y la vibración necesitan \"Modificar ajustes del sistema\" (un interruptor, sin ADB).</string>
+    <string name="battery_grant_modify">Conceder \"Modificar ajustes del sistema\"</string>
+    <string name="battery_auto_brightness">Brillo automático</string>
+    <string name="battery_auto_brightness_desc">Ajustar el brillo según la luz ambiente</string>
+    <string name="battery_haptic">Vibración táctil</string>
+    <string name="battery_haptic_desc">Vibrar en interacciones y llamadas</string>
+    <string name="battery_push_settings">Ajustes de notificaciones push</string>
+    <string name="battery_screen_timeout">Tiempo de espera de pantalla</string>
+    <string name="battery_system_settings">Ajustes del sistema</string>
+    <string name="battery_system_settings_desc">El ahorro de energía y el modo oscuro necesitan WRITE_SECURE_SETTINGS — solo ADB/root, igual que en Herramientas de desarrollo. Concédelo allí una vez y ambos funcionarán aquí también.</string>
+    <string name="battery_saver">Ahorro de energía</string>
+    <string name="battery_saver_desc">Reducir el rendimiento para alargar la batería</string>
+    <string name="battery_dark_mode">Modo oscuro</string>
+    <string name="battery_dark_mode_desc">Cambiar el tema del sistema a oscuro</string>
+    <string name="battery_usage">Detalles de uso de batería</string>
+    <string name="battery_open_display">Ajustes de pantalla y frecuencia de refresco</string>
+
+    <string name="perm_title">Permisos</string>
+    <string name="perm_subtitle">Concédelos uno a uno. Todo es opcional — la app funciona con limitaciones y te indica qué desbloquea cada permiso.</string>
+    <string name="perm_granted">Concedido</string>
+    <string name="perm_not_granted">No concedido</string>
+    <string name="perm_recheck">Volver a comprobar</string>
+    <string name="perm_adb_section">Solo ADB (opcional)</string>
+    <string name="perm_adb_explainer">WRITE_SECURE_SETTINGS desbloquea el ahorro de energía, el modo oscuro y los conmutadores de desarrollo. Android solo lo concede mediante un ordenador:</string>
+    <string name="perm_copy_command">Copiar comando</string>
+    <string name="perm_usage_title">Acceso de uso</string>
+    <string name="perm_usage_why">Desbloquea los tamaños de caché por app, el desglose de almacenamiento y la detección de apps sin usar.</string>
+    <string name="perm_usage_grant">Abrir acceso de uso</string>
+    <string name="perm_files_title">Acceso a todos los archivos</string>
+    <string name="perm_files_why">Permite al analizador ver todos los archivos, no solo medios, y eliminar sin el diálogo del sistema.</string>
+    <string name="perm_files_grant">Abrir acceso a todos los archivos</string>
+    <string name="perm_write_title">Modificar ajustes del sistema</string>
+    <string name="perm_write_why">Necesario para brillo, tiempo de espera, rotación automática y preajustes.</string>
+    <string name="perm_write_grant">Abrir escritura de ajustes</string>
+    <string name="perm_dnd_title">Acceso a No molestar</string>
+    <string name="perm_dnd_why">Necesario para el interruptor No molestar en los preajustes Ahorro de energía / Equilibrado.</string>
+    <string name="perm_dnd_grant">Abrir acceso a No molestar</string>
+    <string name="perm_media_title">Acceso a medios</string>
+    <string name="perm_media_why">Permite al desglose de almacenamiento sumar fotos, vídeos y descargas.</string>
+    <string name="perm_media_grant">Conceder acceso a medios</string>
+
+    <string name="settings_title">Ajustes</string>
+    <string name="settings_appearance">Apariencia</string>
+    <string name="settings_mode_day">Día</string>
+    <string name="settings_mode_dark">Oscuro</string>
+    <string name="settings_language">Idioma</string>
+    <string name="settings_language_system">Predeterminado del sistema</string>
+    <string name="settings_about">Acerca de</string>
+    <string name="settings_about_name">Oh Shoot</string>
+    <string name="settings_about_desc">Una herramienta de limpieza y diagnóstico del sistema para Android en un toque. Cada acción es una llamada real al sistema — sin barras de progreso falsas ni interruptores placebo.</string>
+    <string name="settings_about_author">Hecho por bamBi4k</string>
+    <string name="settings_light">Claro</string>
+    <string name="settings_dark">Oscuro</string>
+
+    <string name="widget_app_name">Oh Shoot</string>
+    <string name="widget_action_clean">Limpiar ahora</string>
+    <string name="widget_action_running">Limpiando…</string>
+    <string name="widget_action_again">Limpiar otra vez</string>
+
+    <string name="widget_status_running">Trabajando…</string>
+    <string name="widget_status_done">%1$s liberados · %2$d apps actualizadas</string>
+    <string name="cleaner_widget_label">Oh Shoot Cleaner</string>
+    <string name="cleaner_widget_description">Limpieza en un toque: libera la caché de la app y pide a Android que expulse procesos en segundo plano.</string>
+
+    <string name="dashboard_widget_description">Salud del dispositivo de un vistazo: memoria, almacenamiento, batería y estado térmico.</string>
+    <string name="dash_short_ram">RAM</string>
+    <string name="dash_short_storage">Disco</string>
+    <string name="dash_short_batt">Bat</string>
+    <string name="dash_short_temp">Temp</string>
+    <string name="dash_short_wifi">Wi-Fi (30d)</string>
+    <string name="dash_short_mobile">Móvil (30d)</string>
+    <string name="dash_tile_used_of">%1$s de %2$s</string>
+    <string name="dash_widget_tap_to_refresh">Toca para refrescar</string>
+
+    <string name="preview_no_thumbnail">Vista previa no disponible</string>
+    <string name="action_close">Cerrar</string>
+    <string name="analysis_dupes_keep_first">conservando esta</string>
+
+    <string name="battery_exempt_title">Fiabilidad en segundo plano</string>
+    <string name="battery_exempt_desc">Exime a Oh Shoot de la optimización de batería para que las limpiezas programadas y los widgets se ejecuten a tiempo. Sin esto, Android puede posponerlos durante horas.</string>
+    <string name="battery_exempt_grant">Solicitar exención</string>
+    <string name="battery_exempt_granted">Exento — el trabajo en segundo plano se ejecutará con fiabilidad</string>
+    <string name="battery_exempt_open_settings">Abrir ajustes de optimización de batería</string>
+
+    <string name="tile_label">Bereinigen</string>
+
+    <string name="dash_network">Red (30 días)</string>
+    <string name="dash_network_subtitle">Wi-Fi: %1$s · Móvil: %2$s</string>
+    <string name="dash_network_unavailable">Concede acceso de uso para ver los totales de red</string>
+    <string name="dash_network_unavailable_action">Conceder acceso de uso</string>
+
+    <string name="storage_top_apps">Apps más grandes</string>
+    <string name="storage_top_apps_subtitle">Apps por espacio total en disco</string>
+    <string name="storage_top_apps_needs_usage">Concede acceso de uso para listar apps por tamaño</string>
+    <string name="storage_top_apps_breakdown">App: %1$s · Datos: %2$s · Caché: %3$s</string>
+    <string name="storage_show_more">Mostrar más</string>
+    <string name="storage_show_less">Mostrar menos</string>
+
+    <string name="analysis_scope_title">Alcance del análisis</string>
+    <string name="analysis_scope_images">Imágenes</string>
+    <string name="analysis_scope_videos">Vídeos</string>
+    <string name="analysis_scope_audio">Audio</string>
+    <string name="analysis_scope_downloads">Descargas</string>
+    <string name="analysis_scope_all">Todos los medios</string>
+    <string name="analysis_scope_min_size">Tamaño mínimo: %1$s</string>
+
+    <string name="auto_clean_title">Limpieza programada</string>
+    <string name="auto_clean_desc">Ejecuta el mismo borrado de caché semanalmente en segundo plano. Requiere la exención de optimización de batería para ser fiable.</string>
+    <string name="auto_clean_enabled">Limpieza automática semanal activada</string>
+    <string name="auto_clean_disabled">Limpieza automática semanal desactivada</string>
+    <string name="notif_channel_auto_clean">Limpieza automática</string>
+    <string name="notif_channel_auto_clean_desc">Notifica tras una limpieza programada</string>
+    <string name="notif_auto_clean_title">Limpieza programada finalizada</string>
+    <string name="notif_auto_clean_text">%1$s liberados</string>
+
+    <string name="perm_notif_title">Notificaciones</string>
+    <string name="perm_notif_why">Necesario para notificarte tras las limpiezas programadas. Android 13+.</string>
+    <string name="perm_notif_grant">Conceder notificaciones</string>
+
+    <string name="dash_short_cpu">CPU</string>
+    <string name="widget_open_dashboard">Abrir panel</string>
+
+    <string name="dash_battery_temp">Temp. batería</string>
+    <string name="dash_free_space">Espacio libre</string>
+    <string name="dash_free_space_subtitle">disponible para archivos nuevos</string>
+
+    <string name="boost_freed">Liberados %1$s</string>
+    <string name="boost_no_cache">Caché ya limpia</string>
+    <string name="boost_evicted">%1$d apps re-sugeridas</string>
+    <string name="boost_mem">%1$d MB de RAM recuperados</string>
+    <string name="dash_deep_clean">Limpieza profunda (manual por app)</string>
+    <string name="dash_deep_clean_hint">Android bloquea el borrado automático de cachés ajenas. La limpieza profunda te guía manualmente — 30 segundos, GBs reales.</string>
+
+    <string name="tile_summary">Limpiados %1$s de %2$d apps en %3$s</string>
+    <string name="tile_summary_no_cache">%1$d apps preparadas en %2$s</string>
+
+    <string name="boost_duration">en %1$s</string>
+
+    <string name="selection_selected">seleccionados</string>
+    <string name="confirm_multi_title">¿Eliminar %1$d archivos?</string>
+    <string name="confirm_multi_message">Se eliminarán permanentemente %1$d archivos con un total de %2$s.</string>
+
+    <string name="network_edit_plan">Editar plan</string>
+    <string name="network_set_plan">Configurar plan</string>
+    <string name="network_mobile_of_cap">%1$s de %2$s usados</string>
+    <string name="network_no_plan_set">Sin plan — toca para configurar</string>
+    <string name="network_remaining">%1$s restantes</string>
+    <string name="network_over_cap">Superaste tu límite</string>
+    <string name="network_wifi">Wi-Fi: %1$s</string>
+    <string name="data_plan_title">Plan de datos móviles</string>
+    <string name="data_plan_subtitle">Configura tu límite mensual de datos para que la app muestre uso vs. límite.</string>
+    <string name="data_plan_cap_label">Límite mensual</string>
+    <string name="data_plan_unlimited">Ilimitado</string>
+    <string name="data_plan_cycle_label">El ciclo comienza el</string>
+    <string name="data_plan_cycle_hint">día del mes</string>
+    <string name="action_save">Guardar</string>
+
+    <string name="data_usage_widget_description">Uso de datos móviles vs. límite del plan de un vistazo.</string>
+
+    <string name="notif_channel_data_usage">Uso de datos</string>
+    <string name="notif_channel_data_usage_desc">Avisa cuando te acercas al límite de tu plan</string>
+    <string name="notif_data_near_cap">Acercándote a tu límite de datos</string>
+    <string name="notif_data_over_cap">Límite de datos superado</string>
+    <string name="notif_data_usage_body">%1$s de %2$s usados en este ciclo</string>
+
+    <string name="data_widget_used_of_cap">%1$s / %2$s</string>
+    <string name="data_widget_of_cap">de %1$s del plan</string>
+    <string name="data_widget_of_cap_short">de %1$s</string>
+    <string name="data_widget_remaining">%1$s restantes</string>
+    <string name="data_widget_over">Límite del plan alcanzado</string>
+    <string name="data_widget_no_cap">Sin plan — toca para configurar</string>
+
+
+    <string name="data_widget_remaining_word">restantes</string>
+
+    <string name="data_widget_mobile_label">Móvil</string>
+    <string name="data_widget_wifi_label">Wi-Fi</string>
+    <string name="data_widget_wifi_subtitle">este ciclo</string>
+    <string name="data_widget_remaining_label">Restante</string>
+    <string name="data_widget_remaining_subtitle">en este ciclo</string>
+    <string name="data_widget_plan_label">Plan usado</string>
+    <string name="data_widget_no_plan_short">Sin plan</string>
+
+    <string name="analysis_unused_none">No se detectaron apps sin usar — todas se abren regularmente.</string>
+
+    <string name="settings_about_hint">Sigue tocando… %1$d/10</string>
+    <string name="easter_egg_title">¡Lo encontraste! 🎉</string>
+    <string name="easter_egg_body">Bienvenido, tester alfa. Tocaste esta tarjeta 10 veces. Nadie te lo pidió. Simplemente lo hiciste. Esa es exactamente la energía con la que se construyó esta app.\n\nGracias por estar aquí desde el principio. Gracias por los informes de errores. Gracias por preocuparte por los detalles. Esto es para ti.</string>
+    <string name="easter_egg_signature">— bamBi4k</string>
+    <string name="easter_egg_close">Cerrar</string>
+
+    <string name="analysis_unused_truncated">Tu teléfono solo guarda unos %1$d días de historial de uso. No es posible determinar qué apps no se han abierto en 60 días. Es una limitación del sistema, no de Oh Shoot.</string>
+
+
+    <string name="dash_charge_remaining">Carga restante</string>
+    <string name="dash_charge_value">%1$d mAh</string>
+    <string name="dash_charge_of_full">de %1$d mAh totales</string>
+    <string name="dash_charge_na">Contador de carga no disponible</string>
+
+
+    <string name="perf_power_saver_desc">Reduce brillo, tiempo de espera y tasa de refresco para ahorrar batería</string>
+    <string name="perf_balanced_desc">Ajustes cotidianos — sensatos, sin sorpresas</string>
+    <string name="perf_performance_desc">Brillo máximo, tiempo de espera largo, animaciones rápidas</string>
+    <string name="perf_needs_access">Este preajuste necesita acceso único para aplicar todos sus ajustes.</string>
+    <string name="perf_grant_modify">Modificar ajustes</string>
+    <string name="perf_grant_dnd">Acceso No molestar</string>
+    <string name="perf_devtools_hint">Algunos ajustes útiles del sistema están en Opciones de desarrollador. Oh Shoot te lleva directamente.</string>
+
+    <string name="dash_cpu_unavailable_action">Abrir ajustes de batería</string>
+
+    <string name="dash_battery_short">Batería</string>
+    <string name="dash_temperature_short">Temp.</string>
+
+    <string name="easter_egg_unlock_title">★ ALPHA FOUNDER DESBLOQUEADO ★</string>
+    <string name="easter_egg_unlock_body">Encontraste el easter egg en la versión alfa. Como agradecimiento, el tema Alpha Founder es tuyo — para siempre. Nunca desaparecerá, ni siquiera en futuras actualizaciones.</string>
+    <string name="easter_egg_apply_theme">Aplicar tema Alpha Founder</string>
+    <string name="settings_founder_theme_name">Alpha Founder</string>
+
+    <string name="widget_status_idle">Toca el logo para limpiar</string>
+
+    <string name="analysis_search_hint">Buscar archivos…</string>
+    <string name="analysis_sort_title">Ordenar por</string>
+    <string name="analysis_sort_size_desc">Tamaño (mayor primero)</string>
+    <string name="analysis_sort_size_asc">Tamaño (menor primero)</string>
+    <string name="analysis_sort_name">Nombre (A–Z)</string>
+    <string name="analysis_sort_date">Fecha (más reciente)</string>
+    <string name="analysis_no_matches">Ningún archivo coincide con la búsqueda.</string>
+
+    <string name="analysis_last_scan_never">Nunca escaneado</string>
+    <string name="analysis_last_scan_seconds">Escaneado hace %1$d segundos</string>
+    <string name="analysis_last_scan_minutes">Escaneado hace %1$d minutos</string>
+    <string name="analysis_last_scan_hours">Escaneado hace %1$d horas</string>
+    <string name="analysis_last_scan_days">Escaneado hace %1$d días</string>
+    <string name="analysis_last_scan_weeks">Escaneado hace %1$d semanas</string>
+
+    <string name="delete_toast_single">1 archivo eliminado, %1$s liberados</string>
+    <string name="delete_toast_multi">%1$d archivos eliminados, %2$s liberados</string>
+
+    <string name="analysis_btn_search">Buscar</string>
+    <string name="analysis_btn_sort">Ordenar</string>
+
+    <string name="analysis_stale_message">Los datos pueden estar desactualizados — la app se limpió desde el último análisis.</string>
+    <string name="analysis_stale_action">Reanalizar</string>
+
+    <string name="row_menu_preview">Vista previa</string>
+    <string name="row_menu_open_in_files">Abrir en Archivos</string>
+    <string name="row_menu_copy_path">Copiar ruta</string>
+
+    <string name="scan_notif_channel">Progreso del análisis</string>
+    <string name="scan_notif_channel_desc">Muestra el progreso en vivo mientras Oh Shoot analiza tu almacenamiento</string>
+    <string name="scan_notif_title">Analizando almacenamiento…</string>
+    <string name="scan_notif_starting">Iniciando…</string>
+
+    <string name="shortcut_clean_short">Limpiar ahora</string>
+    <string name="shortcut_clean_long">Limpiar caché y apps en segundo plano</string>
+    <string name="shortcut_analyse_short">Analizar</string>
+    <string name="shortcut_analyse_long">Buscar duplicados, archivos grandes, apps sin usar</string>
+    <string name="shortcut_dashboard_short">Panel</string>
+    <string name="shortcut_dashboard_long">Abrir el panel de Oh Shoot</string>
+
+    <string name="perm_guide_start">Conceder todo lo necesario (guiado)</string>
+    <string name="perm_guide_step">PASO %1$d DE %2$d</string>
+    <string name="perm_guide_skip">Saltar</string>
+    <string name="perm_guide_open">Abrir ajustes</string>
+    <string name="perm_guide_done_title">¡Todo listo!</string>
+    <string name="perm_guide_done_body">Has revisado todos los permisos. Puedes volver a cualquiera de ellos desde la lista de abajo.</string>
+
+
+    <string name="info_got_it">Entendido</string>
+    <string name="info_battery_time_title">Acerca del tiempo de batería</string>
+    <string name="info_battery_time_body">Tiempo estimado hasta que la batería se agote, según tu nivel de carga y el consumo actual. El uso real varía — abrir un juego o activar el GPS acorta el tiempo; en reposo con pantalla apagada se alarga.\n\nEn dispositivos sin un medidor de batería funcional (como la mayoría de los Samsung), esta estimación no está disponible y la tarjeta solo muestra el tiempo desde la última carga completa.</string>
+    <string name="info_thermal_title">Acerca del estado térmico</string>
+    <string name="info_thermal_body">Android informa un \"estado térmico\" según lo calientes que estén la CPU y la batería. Cuando el teléfono se calienta, Android ralentiza el rendimiento para protegerse — esto es lo que refleja la tarjeta.\n\nNominal: sin limitación.\nLigero / Moderado / Grave: Android reduce el rendimiento progresivamente.\nCrítico o superior: el teléfono podría apagarse para enfriarse.</string>
+    <string name="info_network_title">Acerca del uso de red</string>
+    <string name="info_network_body">Tu consumo de datos móviles en el ciclo de facturación actual, comparado con el límite que configuraste. El Wi-Fi se cuenta por separado y no afecta a tu plan.\n\nLa fecha de inicio del ciclo importa — si la pones mal, los números no coincidirán con los de tu operador. Toca \"Editar plan\" para cambiarla.</string>
+    <string name="info_cpu_title">Acerca de la carga de CPU</string>
+    <string name="info_cpu_body">Uso total de CPU de todas las apps. Desde Android 8, este dato solo está disponible para apps del sistema — por eso la mayoría de los teléfonos lo muestran como no disponible. Usamos una estimación aproximada cuando el dispositivo lo permite.</string>
+
+    <string name="dash_battery_time">Tiempo de batería</string>
+    <string name="battery_time_to_empty">hasta agotarse</string>
+    <string name="battery_time_to_full">hasta llenarse</string>
+    <string name="battery_time_estimate_subtitle">Estimación en vivo del medidor</string>
+    <string name="battery_time_last_full_subtitle">Última carga completa</string>
+    <string name="battery_time_last_full_unavailable">Carga al 100% para empezar el seguimiento</string>
+    <string name="battery_time_na">—</string>
+    <string name="battery_time_ago">atrás</string>
+    <string name="battery_time_just_now">Justo ahora</string>
+
+    <string name="battery_time_live_hint">Estimación en vivo — varía según el uso</string>
+
+    <string name="storage_guided_clean">Limpieza manual de caché</string>
+    <string name="cache_clean_title">Limpieza manual de caché</string>
+    <string name="cache_clean_step">Paso %1$d de %2$d</string>
+    <string name="cache_clean_of_cache">de caché por limpiar</string>
+    <string name="cache_clean_step1">Toca \"Abrir info de la app\" abajo.</string>
+    <string name="cache_clean_step2">En la pantalla del sistema, toca \"Almacenamiento y caché\" y luego \"Borrar caché\".</string>
+    <string name="cache_clean_step3">Vuelve aquí. Te llevaremos a la siguiente app.</string>
+    <string name="cache_clean_open_info">Abrir info de la app</string>
+    <string name="cache_clean_open_again">Abrir otra vez</string>
+    <string name="cache_clean_did_you_clear">¿Borraste la caché?</string>
+    <string name="cache_clean_mark_cleared">Sí, borrada</string>
+    <string name="cache_clean_skip">Omitir esta app</string>
+    <string name="cache_clean_back">Atrás</string>
+    <string name="cache_clean_finish_early">Terminar antes</string>
+    <string name="cache_clean_done_title">Limpieza completada</string>
+    <string name="cache_clean_done_freed">liberados en tus apps</string>
+    <string name="cache_clean_done_cleared">Apps limpiadas</string>
+    <string name="cache_clean_done_skipped">Apps omitidas</string>
+    <string name="cache_clean_done_close">Hecho</string>
+    <string name="storage_preparing">Preparando…</string>
+    <string name="storage_no_cache_to_clean">Ahora mismo ninguna app tiene caché significativa. Puedes hacer una limpieza rápida.</string>
+    <string name="storage_quick_clean_fallback">Hacer limpieza rápida</string>
+
+    <string name="a11y_service_label">Limpiador automático de caché</string>
+    <string name="a11y_service_summary">Automatiza la limpieza de caché en Ajustes</string>
+    <string name="a11y_service_description">Automatiza los toques necesarios para borrar la caché de otras apps. Solo se ejecuta cuando inicias una limpieza desde Oh Shoot — el servicio no hace nada en caso contrario y nunca lee ni almacena datos.</string>
+
+    <string name="a11y_onboarding_title">Limpieza automática disponible</string>
+    <string name="a11y_onboarding_subtitle">Configuración única, sin ordenador</string>
+    <string name="a11y_onboarding_explain">Activa el servicio \"Limpiador automático de caché\" en Accesibilidad. Oh Shoot navegará por Ajustes en tu nombre y borrará la caché de cada app automáticamente — sin toques. El servicio no hace nada a menos que inicies una limpieza desde la app.</string>
+    <string name="a11y_onboarding_action">Activar en Accesibilidad</string>
+    <string name="a11y_onboarding_privacy">Privacidad: el servicio solo se ejecuta durante una limpieza que tú inicias. Nunca lee el contenido de la pantalla ni almacena nada. Puedes desactivarlo en cualquier momento en Ajustes → Accesibilidad.</string>
+
+    <string name="storage_auto_clean">Limpiar cachés automáticamente</string>
+    <string name="auto_clean_done_title">Limpieza automática completada</string>
+    <string name="auto_clean_done_body">%1$d apps limpiadas. %2$d omitidas.</string>
+
+    <string name="storage_try_again_lower_threshold">Probar con aplicaciones más pequeñas (1 MB+)</string>
+
+    <string name="auto_clean_mass_failure">La limpieza automática no funcionó en este dispositivo — no se pudieron limpiar la mayoría de las apps. Prueba la limpieza guiada de abajo.</string>
+    <string name="storage_auto_clean_working">Trabajando…</string>
+    <string name="storage_auto_clean_cancel">Cancelar limpieza automática</string>
+
+    <!-- Tarjeta Shizuku -->
+    <string name="shizuku_title">Shizuku (Modo mejorado)</string>
+    <string name="shizuku_state_not_installed">No instalado</string>
+    <string name="shizuku_state_not_running">Instalado, no está en ejecución</string>
+    <string name="shizuku_state_permission_required">Listo para conectar</string>
+    <string name="shizuku_state_ready">Conectado</string>
+
+    <string name="shizuku_body_not_installed">Instala Shizuku para desbloquear una limpieza de caché más rápida, una gestión real de las apps en segundo plano y ajustes seguros sin necesidad de comandos ADB.</string>
+    <string name="shizuku_body_not_running">Shizuku está instalado pero no iniciado. Abre la app Shizuku e iníciala mediante depuración inalámbrica o ADB.</string>
+    <string name="shizuku_body_permission_required">Shizuku está en ejecución. Concede permiso a esta app para usarlo.</string>
+
+
+    <string name="shizuku_action_install">Instalar Shizuku</string>
+    <string name="shizuku_action_open">Abrir Shizuku</string>
+    <string name="shizuku_action_grant">Conceder permiso</string>
+
+    <string name="shizuku_info_title">Acerca de Shizuku</string>
+    <string name="shizuku_info_body_1">Shizuku es una app de código abierto independiente que permite a otras apps usar los permisos de nivel ADB de Android sin necesidad de root. Así es como apps como esta pueden hacer cosas que Android normalmente bloquea a las apps normales.</string>
+    <string name="shizuku_info_unlocks">Con Shizuku conectado, Oh Shoot puede:</string>
+
+    <string name="shizuku_info_unlock_2">Gestionar las apps en segundo plano de verdad, no solo pedirlo amablemente</string>
+    <string name="shizuku_info_unlock_3">Cambiar ajustes seguros del sistema sin un ordenador</string>
+    <string name="shizuku_info_body_2">Shizuku es completamente opcional. Todo en esta app funciona sin él — Shizuku solo hace que las funciones mejoradas sean más rápidas y fiables. Puedes desconectarlo en cualquier momento deteniéndolo en su propia app.</string>
+
+
+    <!-- Controles mejorados de rendimiento (solo Shizuku) -->
+    <string name="perf_enhanced_title">Controles mejorados</string>
+    <string name="perf_enhanced_subtitle">Estas opciones usan Shizuku para cambiar ajustes del sistema directamente. Permanecen activas hasta que las desactives o restaures los valores predeterminados.</string>
+
+    <string name="perf_anim_title">Velocidad de animación</string>
+    <string name="perf_anim_desc">Las animaciones lentas hacen que el teléfono parezca lento. Acelerarlas lo hace sentir más rápido sin tocar el rendimiento.</string>
+    <string name="perf_anim_speed_off">Desactivado (instantáneo)</string>
+    <string name="perf_anim_speed_half">Rápido (0,5×)</string>
+    <string name="perf_anim_speed_normal">Normal (1×)</string>
+
+    <string name="perf_bg_limit_title">Límite de procesos en segundo plano</string>
+    <string name="perf_bg_limit_desc">Cuántas apps en segundo plano puede mantener Android en memoria. Menos significa más RAM libre, pero las apps se recargan más a menudo al volver a ellas.</string>
+    <string name="perf_bg_limit_default">Predeterminado del sistema</string>
+    <string name="perf_bg_limit_standard">Estándar</string>
+    <string name="perf_bg_limit_1">Como máximo 1 proceso</string>
+    <string name="perf_bg_limit_2">Como máximo 2 procesos</string>
+    <string name="perf_bg_limit_3">Como máximo 3 procesos</string>
+    <string name="perf_bg_limit_4">Como máximo 4 procesos</string>
+
+    <string name="perf_dont_keep_title">No conservar actividades</string>
+    <string name="perf_dont_keep_desc">Destruye cada actividad en cuanto la abandonas. Ahorra RAM, pero tendrás que volver a cargar pantallas al regresar.</string>
+
+    <string name="perf_kill_all_title">Limpiar procesos en segundo plano</string>
+    <string name="perf_kill_all_desc">Termina todos los procesos en segundo plano que Android puede cerrar de forma segura. Las apps en primer plano, música, navegación y llamadas nunca se ven afectadas.</string>
+    <string name="perf_kill_all_button">Limpiar segundo plano</string>
+    <string name="perf_kill_all_done">Procesos en segundo plano limpiados</string>
+
+    <string name="perf_reset_enhanced">Restaurar todo a los valores predeterminados</string>
+    <string name="perf_reset_enhanced_done">Ajustes mejorados restaurados a los valores predeterminados</string>
+
+    <string name="perf_enhanced_unavailable">Los controles mejorados necesitan Shizuku. Conéctalo en la pestaña de permisos para desbloquear estas opciones.</string>
+
+    <string name="shizuku_body_ready">Todas las funciones mejoradas están activas.</string>
+    <string name="shizuku_info_unlock_1">Detener apps de forma fiable — el mismo detenido que usa Ajustes</string>
+
+    <string name="widget_help_title">Sincronización de widgets</string>
+    <string name="widget_help_body">Los widgets pueden tardar unos segundos en reflejar un cambio de tema o idioma.\n\nSi un widget se ve desactualizado, abre y cierra la app una vez, o elimina y vuelve a añadir el widget para actualizarlo al instante.</string>
+</resources>

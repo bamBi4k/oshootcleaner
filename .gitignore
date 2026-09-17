@@ -1,0 +1,32 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Keystores — NEVER commit these
+*.jks
+*.keystore
+keystore.properties
+
+# Release artifacts
+app/release/
+app/build/outputs/apk/
+app/build/outputs/bundle/
+
+# R8 / ProGuard mapping — keep locally, never publish
+app/build/outputs/mapping/
+
+# Environment
+.env
