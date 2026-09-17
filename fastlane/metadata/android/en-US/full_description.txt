@@ -1,0 +1,19 @@
+Oh Shoot is a one-button "refresh everything" app for Android that does only what a non-rooted app is actually allowed to do, no fake progress bars, no pretending to kill other apps' services.
+
+WHAT IT DOES
+• Clears its own cache, code cache, and the shared WebView cache
+• Frees RAM by asking Android to evict cached background processes
+• Reports real before/after free-RAM numbers
+• Deep-links you straight to the Settings screens that can clear every other app's cache, show real battery drain, and limit background processes
+
+PRESETS
+Three performance presets (Power Saving, Balanced, Performance) that change brightness, screen timeout, auto-rotate, and Do Not Disturb. Some settings require a one-time manual grant via Android Settings; the app tells you clearly which ones.
+
+HONEST LIMITS
+Android's sandboxing means a normal app cannot delete another app's cache, force-stop another app's services, or list what's really running. This app doesn't pretend otherwise. It does what it can, and tells you where to go for the rest.
+
+PRIVACY
+No trackers, no analytics, no ads. The app requests no internet permission. Everything happens on-device.
+
+FREE SOFTWARE
+Oh Shoot is open source under the Apache 2.0 license. Source code is available on GitHub.

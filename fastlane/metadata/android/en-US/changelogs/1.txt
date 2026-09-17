@@ -1,0 +1,9 @@
+First public release.
+- One-tap cleanup of own cache and WebView cache
+- Background process eviction with real RAM reporting
+- Performance presets (Power Saving, Balanced, Performance)
+- Storage analyser: duplicates, big files, unused apps
+- Battery and dashboard tabs with live system stats
+- Home-screen widgets, quick-settings tile, launcher shortcuts
+- Six themes including light and dark variants
+- Support for seven languages
