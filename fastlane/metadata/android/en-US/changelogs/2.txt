@@ -1,2 +1,8 @@
-Second public release.
-- F-Droid prepared
+Initial release.
+
+* Shizuku-based privileged cache and residual file cleaning
+* Background process optimization
+* Four pastel themes
+* Material 3 UI
+* Home-screen widget
+* No trackers, no analytics, fully offline

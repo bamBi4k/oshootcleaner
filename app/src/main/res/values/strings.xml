@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Oh Shoot</string>
+    <string name="app_name">OhShootCleaner</string>
 
     <!-- Tabs -->
     <string name="tab_dashboard">Dashboard</string>
