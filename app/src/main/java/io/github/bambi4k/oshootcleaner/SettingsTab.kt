@@ -102,7 +102,7 @@ fun SettingsTab(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .clip(RoundedCornerShape(12.dp))
+                .clip(theme.cornerShape(12))
                 .background(theme.bgCrust)
                 .padding(4.dp)
         ) {
@@ -143,7 +143,7 @@ fun SettingsTab(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clip(RoundedCornerShape(12.dp))
+                    .clip(theme.cornerShape(12))
                     .background(theme.bgSurface)
                     .clickable { languageMenuOpen = true }
                     .padding(14.dp),
@@ -195,9 +195,6 @@ fun SettingsTab(
                             if (choice.tag != language) {
                                 language = choice.tag
                                 LanguageStore.set(context, choice.tag)
-                                // Widget refresh is handled by MainActivity
-                                // on next create, so it doesn't race with
-                                // recreate().
                                 (context as? android.app.Activity)?.recreate()
                             }
                         }
@@ -251,10 +248,11 @@ fun SettingsTab(
             }
         }
 
+        val aboutShape = theme.cornerShape(14)
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .clip(RoundedCornerShape(14.dp))
+                .clip(aboutShape)
                 .background(theme.bgSurface)
                 .clickable {
                     tapCount++
@@ -324,8 +322,7 @@ fun SettingsTab(
     }
 
     // =============================================================
-    // Widget help dialog — rendered outside the Column so it
-    // overlays correctly.
+    // Widget help dialog
     // =============================================================
     if (showWidgetHelp) {
         AlertDialog(
@@ -371,7 +368,7 @@ private fun ModeSegment(
 ) {
     Box(
         modifier = modifier
-            .clip(RoundedCornerShape(10.dp))
+            .clip(theme.cornerShape(10))
             .background(if (selected) theme.buttonPrimaryBg else theme.bgCrust)
             .clickable(onClick = onClick)
             .padding(vertical = 10.dp),
@@ -392,15 +389,16 @@ private fun FlavorCard(
     isSelected: Boolean,
     onClick: () -> Unit
 ) {
+    val shape = flavor.cornerShape(14)
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(14.dp))
+            .clip(shape)
             .background(flavor.bgBase)
             .border(
                 width = if (isSelected) 2.dp else 0.dp,
                 color = flavor.buttonPrimaryBg,
-                shape = RoundedCornerShape(14.dp)
+                shape = shape
             )
             .clickable(onClick = onClick)
             .padding(14.dp),
@@ -410,7 +408,7 @@ private fun FlavorCard(
         Column(
             modifier = Modifier
                 .size(width = 64.dp, height = 44.dp)
-                .clip(RoundedCornerShape(8.dp))
+                .clip(flavor.cornerShape(8))
                 .background(flavor.bgSurface)
                 .padding(4.dp)
         ) {
@@ -433,7 +431,7 @@ private fun FlavorCard(
             Box(
                 modifier = Modifier
                     .size(width = 28.dp, height = 10.dp)
-                    .clip(RoundedCornerShape(5.dp))
+                    .clip(flavor.cornerShape(5))
                     .background(flavor.buttonPrimaryBg)
             )
         }

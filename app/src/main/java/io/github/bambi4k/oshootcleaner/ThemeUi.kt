@@ -22,34 +22,25 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-
-fun Modifier.bevel(theme: ThemeSpec): Modifier =
-    this.background(
-        Brush.verticalGradient(
-            colors = listOf(
-                theme.bevelHighlight.copy(alpha = 0.08f),
-                Color.Transparent,
-                theme.bevelShadow.copy(alpha = 0.10f)
-            )
-        )
-    )
-
-fun Modifier.borderOnly(theme: ThemeSpec, shape: RoundedCornerShape): Modifier =
-    this.border(1.dp, theme.bevelBorder, shape)
+// NOTE: bevel(), borderOnly(), vguiBevel(), themedBevel(), and
+// surfaceBrush() now live in Bevel.kt. Do not redeclare them here.
 
 @Composable
 fun SectionLabel(text: String, theme: ThemeSpec) {
+    val isVgui = theme.id == "vgui"
     Text(
         text = text.uppercase(),
         color = theme.fontsSecondary,
-        fontSize = 11.sp,
+        fontSize = if (isVgui) 10.sp else 11.sp,
         fontWeight = FontWeight.Bold,
-        letterSpacing = 1.2.sp
+        letterSpacing = if (isVgui) 1.6.sp else 1.2.sp,
+        fontFamily = if (isVgui) FontFamily.Monospace else FontFamily.Default
     )
 }
 
@@ -65,12 +56,13 @@ fun StatCard(
     infoTitleRes: Int? = null,
     infoBodyRes: Int? = null
 ) {
+    val shape = theme.cornerShape(16)
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(16.dp))
-            .background(theme.bgSurface)
-            .borderOnly(theme, RoundedCornerShape(16.dp))
+            .clip(shape)
+            .background(theme.surfaceBrush())
+            .then(theme.themedBevel(shape))
             .then(
                 if (onClick != null) Modifier.clickable(onClick = onClick)
                 else Modifier
@@ -164,21 +156,36 @@ fun PrimaryButton(
     enabled: Boolean = true,
     onClick: () -> Unit
 ) {
+    val shape = theme.cornerShape(14)
+    val isVgui = theme.id == "vgui"
+
+    val bgColor = when {
+        !enabled -> theme.buttonDisabledBg
+        isVgui -> theme.buttonPrimaryBg      // #615820 accent-dim
+        else -> theme.buttonPrimaryBg
+    }
+    val textColor = when {
+        !enabled -> theme.buttonDisabledText
+        isVgui -> theme.buttonPrimaryText    // #C4B550 accent
+        else -> theme.buttonPrimaryText
+    }
+
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(14.dp))
-            .background(if (enabled) theme.buttonPrimaryBg else theme.buttonDisabledBg)
+            .clip(shape)
+            .background(bgColor)
+            .then(if (isVgui) Modifier.vguiOutset(theme) else Modifier)
             .clickable(enabled = enabled, onClick = onClick)
-            .padding(vertical = 16.dp),
+            .padding(vertical = if (isVgui) 10.dp else 16.dp),
         contentAlignment = Alignment.Center
     ) {
         Text(
-            label,
-            color = if (enabled) theme.buttonPrimaryText else theme.buttonDisabledText,
-            fontWeight = FontWeight.Bold,
-            fontSize = 15.sp,
-            letterSpacing = 0.3.sp,
+            text = label,
+            color = textColor,
+            fontWeight = FontWeight.Normal,
+            fontSize = if (isVgui) 12.sp else 15.sp,
+            letterSpacing = if (isVgui) 0.4.sp else 0.3.sp,
             maxLines = 1,
             softWrap = false,
             overflow = TextOverflow.Ellipsis
@@ -193,21 +200,27 @@ fun SecondaryButton(
     enabled: Boolean = true,
     onClick: () -> Unit
 ) {
+    val shape = theme.cornerShape(14)
+    val isVgui = theme.id == "vgui"
+
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(14.dp))
-            .background(theme.bgSurface)
-            .border(1.dp, theme.bevelBorder, RoundedCornerShape(14.dp))
+            .clip(shape)
+            .background(theme.buttonBg)      // --bg #4A5942
+            .then(
+                if (isVgui) Modifier.vguiOutset(theme)
+                else Modifier.border(1.dp, theme.bevelBorder, shape)
+            )
             .clickable(enabled = enabled, onClick = onClick)
-            .padding(vertical = 14.dp),
+            .padding(vertical = if (isVgui) 10.dp else 14.dp),
         contentAlignment = Alignment.Center
     ) {
         Text(
-            label,
+            text = label,
             color = if (enabled) theme.fontsPrimary else theme.fontsSecondary.copy(alpha = 0.5f),
-            fontWeight = FontWeight.Medium,
-            fontSize = 14.sp,
+            fontWeight = FontWeight.Normal,
+            fontSize = if (isVgui) 12.sp else 14.sp,
             maxLines = 1,
             softWrap = false,
             overflow = TextOverflow.Ellipsis
@@ -217,12 +230,13 @@ fun SecondaryButton(
 
 @Composable
 fun ActionRow(label: String, theme: ThemeSpec, onClick: () -> Unit) {
+    val shape = theme.cornerShape(12)
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(12.dp))
-            .background(theme.bgSurface)
-            .borderOnly(theme, RoundedCornerShape(12.dp))
+            .clip(shape)
+            .background(theme.surfaceBrush())
+            .then(theme.themedBevel(shape))
             .clickable(onClick = onClick)
             .padding(horizontal = 14.dp, vertical = 14.dp),
         verticalAlignment = Alignment.CenterVertically
@@ -250,12 +264,13 @@ fun ToggleRow(
     theme: ThemeSpec,
     onToggle: (Boolean) -> Unit
 ) {
+    val shape = theme.cornerShape(12)
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(12.dp))
-            .background(theme.bgSurface)
-            .borderOnly(theme, RoundedCornerShape(12.dp))
+            .clip(shape)
+            .background(theme.surfaceBrush())
+            .then(theme.themedBevel(shape))
             .padding(horizontal = 14.dp, vertical = 12.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {

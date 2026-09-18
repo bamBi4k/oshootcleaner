@@ -1,7 +1,6 @@
 package io.github.bambi4k.oshootcleaner
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,7 +12,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -56,20 +54,9 @@ private enum class ShizukuState {
  * for binder and permission changes, and updates in place — no activity
  * recreation needed.
  *
- * The card renders four different layouts depending on state, all sharing
- * the same overall shape:
- *
- *   ●  Shizuku (Enhanced Mode)             ⓘ
- *      <status line>
- *
- *      <optional explanation>
- *
- *      [ primary action button ]
- *
  * @param theme the current ThemeSpec
  * @param onReady an optional callback fired the moment the card reaches
- *        ShizukuState.READY. Useful for screens that want to refresh
- *        their enabled features when the user connects.
+ *        ShizukuState.READY.
  */
 @Composable
 fun ShizukuCard(
@@ -78,18 +65,13 @@ fun ShizukuCard(
 ) {
     val context = LocalContext.current
 
-    // Live state. Recomputed from ShizukuManager on every relevant event.
     var state by remember { mutableStateOf(currentState(context)) }
     var infoOpen by remember { mutableStateOf(false) }
 
-    // Recompute the state from scratch. Called on bind/dead/permission
-    // events and on first composition.
     fun refresh() {
         state = currentState(context)
     }
 
-    // Register Shizuku listeners for the duration the card is composed.
-    // On dispose, unregister so we don't leak.
     DisposableEffect(Unit) {
         val onBinderReceived: () -> Unit = { refresh() }
         val onBinderDead: () -> Unit = { refresh() }
@@ -99,8 +81,6 @@ fun ShizukuCard(
         ShizukuManager.addBinderDeadListener(onBinderDead)
         ShizukuManager.addPermissionListener(onPermission)
 
-        // Also refresh immediately in case Shizuku started between screen
-        // composition and listener registration.
         refresh()
 
         onDispose {
@@ -110,10 +90,6 @@ fun ShizukuCard(
         }
     }
 
-    // Poll lightly every 2 seconds while the card is in NOT_RUNNING or
-    // PERMISSION_REQUIRED. The Shizuku API doesn't emit an event when the
-    // user starts Shizuku from its own app — we'd otherwise wait for them
-    // to come back to our app to update the UI.
     LaunchedEffect(state) {
         if (state == ShizukuState.READY || state == ShizukuState.NOT_INSTALLED) return@LaunchedEffect
         while (true) {
@@ -125,8 +101,6 @@ fun ShizukuCard(
         }
     }
 
-    // Fire the ready callback whenever we transition into READY. The
-    // effect's key is the state, so it fires exactly on transitions.
     LaunchedEffect(state) {
         if (state == ShizukuState.READY) {
             onReady()
@@ -134,12 +108,13 @@ fun ShizukuCard(
     }
 
     // ---- The card UI itself ----
+    val cardShape = theme.cornerShape(14)
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(14.dp))
-            .background(theme.bgSurface)
-            .border(1.dp, theme.bevelBorder, RoundedCornerShape(14.dp))
+            .clip(cardShape)
+            .background(theme.surfaceBrush())
+            .then(theme.themedBevel(cardShape))
             .padding(16.dp)
     ) {
         // Header row: dot + title + info button
@@ -153,7 +128,6 @@ fun ShizukuCard(
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.weight(1f)
             )
-            // Info button — a small circle with an "i"
             Box(
                 modifier = Modifier
                     .size(22.dp)
@@ -181,9 +155,9 @@ fun ShizukuCard(
             fontWeight = FontWeight.Medium
         )
 
-        // Explanation block — only shown in states where there's an action
-        // the user needs to take. In READY state we just show the benefits.
         Spacer(Modifier.height(10.dp))
+
+        // Explanation block
         Text(
             text = stringResource(stateBodyRes(state)),
             color = theme.fontsSecondary,
@@ -191,14 +165,15 @@ fun ShizukuCard(
             lineHeight = 16.sp
         )
 
-        // Primary action button — only shown when there's something to do
+        // Primary action button
         val actionLabel = stateActionRes(state)
         if (actionLabel != null) {
             Spacer(Modifier.height(14.dp))
+            val buttonShape = theme.cornerShape(10)
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clip(RoundedCornerShape(10.dp))
+                    .clip(buttonShape)
                     .background(theme.buttonPrimaryBg)
                     .clickable { performAction(context, state) }
                     .padding(vertical = 12.dp),
@@ -291,10 +266,11 @@ private fun ShizukuInfoDialog(
     onDismiss: () -> Unit
 ) {
     Dialog(onDismissRequest = onDismiss) {
+        val dialogShape = theme.cornerShape(20)
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .clip(RoundedCornerShape(20.dp))
+                .clip(dialogShape)
                 .background(theme.bgBase)
                 .padding(24.dp)
         ) {

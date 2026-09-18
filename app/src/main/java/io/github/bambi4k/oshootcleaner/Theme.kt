@@ -170,6 +170,63 @@ object ThemeCatalog {
     )
 
     // ====================================================================
+// VGUI — exact colors from guh.txt (Overlay Configurator stylesheet).
+// ====================================================================
+    val vgui = ThemeSpec(
+        id = "vgui",
+        displayName = "VGUI",
+        mode = ThemeMode.DARK,
+
+        // Fonts
+        fontsPrimary   = Color(0xFFDEDFD6),  // --text
+        fontsSecondary = Color(0xFFD8DED3),  // --secondary-text
+        fontsHeadings  = Color(0xFFFFFFFF),  // .cfg-title-text uses #fff
+        fontsLinks     = Color(0xFFC4B550),  // --accent
+        fontsCode      = Color(0xFFC4B550),
+
+        // Backgrounds
+        bgBase    = Color(0xFF4A5942),  // --bg
+        bgMantle  = Color(0xFF444F3C),
+        bgCrust   = Color(0xFF3E4637),  // --secondary-bg
+        bgSurface = Color(0xFF4A5942),  // --bg (same as base)
+        bgOverlay = Color(0xFF5A6A50),  // --scrollbar-track
+
+        // Buttons
+        buttonBg           = Color(0xFF4A5942),
+        buttonText         = Color(0xFFDEDFD6),
+        buttonPrimaryBg    = Color(0xFF615820),  // --accent-dim
+        buttonPrimaryText  = Color(0xFFC4B550),  // --accent
+        buttonHover        = Color(0xFF958831),  // --secondary-accent
+        buttonActive       = Color(0xFF3E4637),
+        buttonDisabledBg   = Color(0xFF4A5942),
+        buttonDisabledText = Color(0xFF292C21),  // --disabled-text
+
+        // Bevels — the EXACT values from guh.txt
+        bevelHighlight = Color(0xFF8C9284),  // --border-light
+        bevelShadow    = Color(0xFF292C21),  // --border-dark
+        bevelBorder    = Color(0xFF292C21),  // --border-dark
+
+        // Console
+        consoleBg      = Color(0xFF000000),  // .fw-code-block pre
+        consoleText    = Color(0xFFD4D4D4),
+        consolePrompt  = Color(0xFFDCDCAA),  // .pwsh-cmd
+        consoleError   = Color(0xFFE05252),  // --red
+        consoleWarning = Color(0xFFE8A838),  // .cfg-auth-warning
+        consoleSuccess = Color(0xFF3DBA6B),  // --green
+        consoleInfo    = Color(0xFFA0AA95),  // --text-3
+
+        // Accents
+        accentMauve    = Color(0xFFA0AA95),  // --text-3
+        accentPink     = Color(0xFFC4B550),  // --accent
+        accentPeach    = Color(0xFF958831),  // --secondary-accent
+        accentYellow   = Color(0xFFC4B550),  // --accent
+        accentGreen    = Color(0xFF3DBA6B),  // --green
+        accentTeal     = Color(0xFF7F8C7F),  // --slider
+        accentSky      = Color(0xFFA0AA95),  // --text-3
+        accentLavender = Color(0xFF8C9284)   // --border-light
+    )
+
+    // ====================================================================
     // ALPHA FOUNDER — exclusive theme, unlocked only by finding the easter
     // egg. Do not remove from ThemeCatalog.all; the picker filters by
     // unlock state, not by absence.
@@ -223,9 +280,9 @@ object ThemeCatalog {
     )
 
     // Order = display order in the picker.
-    val darkFlavors = listOf(frappe, macchiato, mocha, monoDark, alphaFounder)
+    val darkFlavors = listOf(frappe, macchiato, mocha, monoDark,vgui, alphaFounder)
     val lightFlavors = listOf(latte, monoLight)
-    val all = listOf(latte, monoLight, frappe, macchiato, mocha, monoDark, alphaFounder)
+    val all = listOf(latte, monoLight, frappe, macchiato, mocha, monoDark,vgui, alphaFounder)
     val default = monoDark
 
     fun byId(id: String): ThemeSpec = all.find { it.id == id } ?: default

@@ -3,7 +3,6 @@ package io.github.bambi4k.oshootcleaner
 import android.content.Intent
 import android.os.PowerManager
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -61,12 +60,7 @@ fun DashboardTab(theme: ThemeSpec) {
     var boostResult by remember { mutableStateOf<String?>(null) }
     var boostProgress by remember { mutableStateOf<String?>(null) }
 
-    // Dialog state for the first-time enhanced boost confirmation.
     var showShizukuConfirm by remember { mutableStateOf(false) }
-
-    // Tracks whether Shizuku is currently connected, refreshed on
-    // composition and every time we come back from another screen. The
-    // frame around the button uses this.
     var shizukuReady by remember { mutableStateOf(ShizukuManager.isReady()) }
 
     LaunchedEffect(Unit) {
@@ -97,30 +91,21 @@ fun DashboardTab(theme: ThemeSpec) {
         batteryTime = BatteryTimeEstimator.compute(context)
     }
 
-    /**
-     * Performs the boost. The caller has already handled the Shizuku
-     * confirmation dialog if needed.
-     */
     fun doBoost() {
         if (isBoosting) return
         isBoosting = true
         boostResult = null
         boostProgress = null
         scope.launch {
-            // Always run our own local cleanup first.
             val clean = withContext(Dispatchers.IO) {
                 CleanupManager.runQuickClean(context)
             }
 
             if (ShizukuManager.isReady()) {
-                // Enhanced path — real force-stop + cache deletion for
-                // a bounded window of apps.
                 val boost = withContext(Dispatchers.IO) {
                     ShizukuManager.boostBackgroundApps(
                         context = context,
                         onProgress = { done, total, current ->
-                            // Hop back to the main thread so the state
-                            // update is observed by Compose.
                             scope.launch {
                                 boostProgress = if (current.isBlank()) {
                                     null
@@ -146,11 +131,6 @@ fun DashboardTab(theme: ThemeSpec) {
         }
     }
 
-    /**
-     * Entry point for the button. If Shizuku is ready AND the user
-     * hasn't opted out of the confirmation, show the dialog first;
-     * otherwise run immediately.
-     */
     fun requestBoost() {
         val needsConfirm = ShizukuManager.isReady() &&
                 !ShizukuBoostPrefs.shouldSkipConfirmation(context)
@@ -330,7 +310,6 @@ fun DashboardTab(theme: ThemeSpec) {
         SectionLabel(stringResource(R.string.dash_quick_action), theme)
         Spacer(Modifier.height(8.dp))
 
-        // The Boost button, wrapped in the Shizuku frame when connected.
         ShizukuBadgeFrame(
             enabled = shizukuReady && !isBoosting,
             theme = theme
@@ -344,9 +323,6 @@ fun DashboardTab(theme: ThemeSpec) {
             ) { requestBoost() }
         }
 
-        // Live progress text, shown only while an enhanced boost is
-        // running. Sits right under the button, replaces the summary
-        // until the run finishes.
         boostProgress?.let { progress ->
             Spacer(Modifier.height(8.dp))
             Text(
@@ -404,12 +380,6 @@ fun DashboardTab(theme: ThemeSpec) {
     }
 }
 
-/**
- * Navigate to a tab. Prefers in-app pager navigation (no activity
- * restart, no splash flash). Falls back to launching the activity fresh
- * if no pager is currently registered (widget or launcher shortcut cold
- * start).
- */
 private fun openTab(context: android.content.Context, tabName: String) {
     val ordinal = runCatching { AppTab.valueOf(tabName).ordinal }.getOrNull()
     if (ordinal != null && TabNavigator.navigate(ordinal)) {
@@ -493,12 +463,13 @@ private fun NetworkCard(
         else -> theme.accentGreen
     }
 
+    val cardShape = theme.cornerShape(16)
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(16.dp))
-            .background(theme.bgSurface)
-            .border(1.dp, theme.bevelBorder, RoundedCornerShape(16.dp))
+            .clip(cardShape)
+            .background(theme.surfaceBrush())
+            .then(theme.themedBevel(cardShape))
             .padding(16.dp)
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -565,14 +536,14 @@ private fun NetworkCard(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(8.dp)
-                    .clip(RoundedCornerShape(4.dp))
+                    .clip(theme.cornerShape(4))
                     .background(theme.bgCrust)
             ) {
                 Box(
                     modifier = Modifier
                         .fillMaxHeight()
                         .fillMaxWidth(fraction)
-                        .clip(RoundedCornerShape(4.dp))
+                        .clip(theme.cornerShape(4))
                         .background(barColor)
                 )
             }

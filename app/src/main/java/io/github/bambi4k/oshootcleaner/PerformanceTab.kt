@@ -1,7 +1,6 @@
 package io.github.bambi4k.oshootcleaner
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -14,7 +13,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -130,11 +128,13 @@ fun PerformanceTab(theme: ThemeSpec) {
         // --- Permission warning, only when actually needed ---
         if (!writeSettingsGranted || !dndGranted) {
             Spacer(Modifier.height(16.dp))
+            val warnShape = theme.cornerShape(12)
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clip(RoundedCornerShape(12.dp))
-                    .background(theme.bgSurface)
+                    .clip(warnShape)
+                    .background(theme.surfaceBrush())
+                    .then(theme.themedBevel(warnShape))
                     .padding(14.dp)
             ) {
                 Text(
@@ -163,11 +163,13 @@ fun PerformanceTab(theme: ThemeSpec) {
         // --- Result log, only if a preset was actually applied ---
         if (lastLog.isNotEmpty()) {
             Spacer(Modifier.height(16.dp))
+            val logShape = theme.cornerShape(12)
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clip(RoundedCornerShape(12.dp))
+                    .clip(logShape)
                     .background(theme.consoleBg)
+                    .then(theme.themedBevel(logShape))
                     .padding(14.dp)
             ) {
                 lastLog.forEach {
@@ -177,8 +179,7 @@ fun PerformanceTab(theme: ThemeSpec) {
         }
 
         // =================================================================
-        // ENHANCED MODE — new section, inserted between the presets and
-        // the Developer Options deep link.
+        // ENHANCED MODE
         // =================================================================
 
         Spacer(Modifier.height(32.dp))
@@ -192,9 +193,6 @@ fun PerformanceTab(theme: ThemeSpec) {
         )
         Spacer(Modifier.height(10.dp))
 
-        // Shizuku connection card. onReady updates our local state so
-        // the enhanced controls un-grey immediately when permission is
-        // granted from inside the card.
         ShizukuCard(
             theme = theme,
             onReady = {
@@ -211,10 +209,6 @@ fun PerformanceTab(theme: ThemeSpec) {
 
         Spacer(Modifier.height(16.dp))
 
-        // Enhanced controls — each control is its own card. Only the
-        // action button gets the SHIZUKU frame; everything else is a
-        // plain surface so the section reads as a coherent list rather
-        // than one big boxed-off area.
         Column(modifier = Modifier.fillMaxWidth()) {
 
             // --- Animation speed ---
@@ -260,11 +254,13 @@ fun PerformanceTab(theme: ThemeSpec) {
             Spacer(Modifier.height(10.dp))
 
             // --- Don't Keep Activities ---
+            val dkaShape = theme.cornerShape(12)
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clip(RoundedCornerShape(12.dp))
-                    .background(theme.bgSurface)
+                    .clip(dkaShape)
+                    .background(theme.surfaceBrush())
+                    .then(theme.themedBevel(dkaShape))
                     .padding(horizontal = 14.dp, vertical = 12.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -315,9 +311,6 @@ fun PerformanceTab(theme: ThemeSpec) {
             Spacer(Modifier.height(16.dp))
 
             // --- Clear Background Processes ---
-// Only THIS element gets the SHIZUKU frame. It's the "action
-// button" of the section, and the pill tells the user it's
-// Shizuku-powered.
             ShizukuBadgeFrame(
                 enabled = shizukuReady,
                 theme = theme
@@ -325,7 +318,7 @@ fun PerformanceTab(theme: ThemeSpec) {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clip(RoundedCornerShape(12.dp))
+                        .clip(theme.cornerShape(12))
                         .background(
                             if (shizukuReady) theme.buttonPrimaryBg
                             else theme.buttonDisabledBg
@@ -364,11 +357,13 @@ fun PerformanceTab(theme: ThemeSpec) {
             Spacer(Modifier.height(16.dp))
 
             // --- Restore defaults ---
+            val restoreShape = theme.cornerShape(12)
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clip(RoundedCornerShape(12.dp))
-                    .background(theme.bgSurface)
+                    .clip(restoreShape)
+                    .background(theme.surfaceBrush())
+                    .then(theme.themedBevel(restoreShape))
                     .clickable(enabled = shizukuReady) {
                         scope.launch {
                             val ok = withContext(Dispatchers.IO) {
@@ -422,7 +417,7 @@ fun PerformanceTab(theme: ThemeSpec) {
         // END ENHANCED MODE
         // =================================================================
 
-        // --- Developer tools: one hint + one button (unchanged) ---
+        // --- Developer tools ---
         Spacer(Modifier.height(32.dp))
         SectionLabel(stringResource(R.string.perf_devtools), theme)
         Spacer(Modifier.height(8.dp))
@@ -445,10 +440,6 @@ fun PerformanceTab(theme: ThemeSpec) {
 // Enhanced mode — individual controls
 // =====================================================================
 
-/**
- * Three-segment control for animation speed. Reads like a mini tab bar
- * with a background track and a highlighted active segment.
- */
 @Composable
 private fun EnhancedAnimSpeedControl(
     current: ShizukuPerformance.AnimationSpeed?,
@@ -456,11 +447,13 @@ private fun EnhancedAnimSpeedControl(
     theme: ThemeSpec,
     onSelect: (ShizukuPerformance.AnimationSpeed) -> Unit
 ) {
+    val cardShape = theme.cornerShape(12)
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(12.dp))
-            .background(theme.bgSurface)
+            .clip(cardShape)
+            .background(theme.surfaceBrush())
+            .then(theme.themedBevel(cardShape))
             .padding(14.dp)
     ) {
         Text(
@@ -482,7 +475,7 @@ private fun EnhancedAnimSpeedControl(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .clip(RoundedCornerShape(8.dp))
+                .clip(theme.cornerShape(8))
                 .background(theme.bgCrust)
                 .padding(2.dp),
             horizontalArrangement = Arrangement.spacedBy(2.dp)
@@ -523,7 +516,7 @@ private fun AnimSegment(
 ) {
     Box(
         modifier = modifier
-            .clip(RoundedCornerShape(6.dp))
+            .clip(theme.cornerShape(6))
             .background(
                 when {
                     !enabled -> theme.bgCrust
@@ -549,10 +542,6 @@ private fun AnimSegment(
     }
 }
 
-/**
- * Row with the current process limit and a chevron; taps open a
- * dropdown for choosing among the six Android-supported values.
- */
 @Composable
 private fun EnhancedProcessLimitRow(
     current: ShizukuPerformance.ProcessLimit?,
@@ -562,12 +551,14 @@ private fun EnhancedProcessLimitRow(
     onPickerOpenChange: (Boolean) -> Unit,
     onSelect: (ShizukuPerformance.ProcessLimit) -> Unit
 ) {
+    val rowShape = theme.cornerShape(12)
     Box(modifier = Modifier.fillMaxWidth()) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .clip(RoundedCornerShape(12.dp))
-                .background(theme.bgSurface)
+                .clip(rowShape)
+                .background(theme.surfaceBrush())
+                .then(theme.themedBevel(rowShape))
                 .clickable(enabled = enabled) { onPickerOpenChange(true) }
                 .padding(14.dp)
         ) {
@@ -644,7 +635,7 @@ private fun processLimitLabel(limit: ShizukuPerformance.ProcessLimit): String = 
 }
 
 // =====================================================================
-// Existing composables — unchanged from the reference file
+// Existing composables — VGUI-aware
 // =====================================================================
 
 @Composable
@@ -655,13 +646,14 @@ private fun PresetCard(
     theme: ThemeSpec,
     onClick: () -> Unit
 ) {
+    val shape = theme.cornerShape(16)
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .height(96.dp)
-            .clip(RoundedCornerShape(16.dp))
-            .background(theme.bgSurface)
-            .border(1.dp, theme.bevelBorder, RoundedCornerShape(16.dp))
+            .clip(shape)
+            .background(theme.surfaceBrush())
+            .then(theme.themedBevel(shape))
             .clickable(onClick = onClick)
             .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically
@@ -671,7 +663,7 @@ private fun PresetCard(
                 .height(64.dp)
                 .padding(end = 16.dp)
                 .fillMaxWidth(0.012f)
-                .clip(RoundedCornerShape(2.dp))
+                .clip(theme.cornerShape(2))
                 .background(accentColor)
         )
         Column(modifier = Modifier.weight(1f)) {
@@ -704,10 +696,12 @@ private fun SmallLinkButton(
     theme: ThemeSpec,
     onClick: () -> Unit
 ) {
+    val shape = theme.cornerShape(8)
     Box(
         modifier = Modifier
-            .clip(RoundedCornerShape(8.dp))
+            .clip(shape)
             .background(theme.bgCrust)
+            .then(theme.themedBevel(shape))
             .clickable(onClick = onClick)
             .padding(horizontal = 12.dp, vertical = 8.dp)
     ) {

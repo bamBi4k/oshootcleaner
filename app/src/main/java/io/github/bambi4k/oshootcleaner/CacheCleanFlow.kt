@@ -5,6 +5,7 @@ import android.net.Uri
 import android.provider.Settings
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -19,7 +20,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -40,21 +40,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import androidx.compose.foundation.clickable
 
-/**
- * Full-screen guided cache-clean flow. The user is walked through each
- * app that has cache worth clearing, one at a time. For each:
- *
- *   1. We show the app label + cache size.
- *   2. They tap "Open App Info" → system Settings opens for that app.
- *   3. They tap "Clear cache" in the system screen.
- *   4. They come back (system back button).
- *   5. The dialog auto-detects the return and asks them to mark it
- *      cleared or skipped.
- *
- * The UI is intentionally simple and focused — one decision at a time.
- */
 @Composable
 fun CacheCleanFlow(
     session: CacheCleanSession,
@@ -63,7 +49,6 @@ fun CacheCleanFlow(
 ) {
     val context = LocalContext.current
 
-    // Save state on every change so we survive process death.
     LaunchedEffect(session.currentIndex, session.targets.map { it.status }) {
         if (session.isFinished) {
             CacheCleanSessionStore.clear(context)
@@ -72,10 +57,6 @@ fun CacheCleanFlow(
         }
     }
 
-    // Watch for the user returning from App Info. We track this by
-    // comparing the foreground/background transition, but the simplest
-    // reliable signal is `OnResumeEffect` — fires whenever our activity
-    // comes back to the foreground.
     var backFromSettings by remember { mutableStateOf(false) }
     OnResumeEffect {
         if (session.currentIndex in session.targets.indices) {
@@ -176,14 +157,14 @@ private fun CurrentTargetView(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(6.dp)
-                .clip(RoundedCornerShape(3.dp))
+                .clip(theme.cornerShape(3))
                 .background(theme.bgCrust)
         ) {
             Box(
                 modifier = Modifier
                     .fillMaxHeight()
                     .fillMaxWidth(progressFraction.coerceIn(0f, 1f))
-                    .clip(RoundedCornerShape(3.dp))
+                    .clip(theme.cornerShape(3))
                     .background(theme.buttonPrimaryBg)
             )
         }
@@ -191,12 +172,13 @@ private fun CurrentTargetView(
         Spacer(Modifier.height(32.dp))
 
         // ---- Current app card ----
+        val cardShape = theme.cornerShape(20)
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .clip(RoundedCornerShape(20.dp))
-                .background(theme.bgSurface)
-                .border(1.dp, theme.bevelBorder, RoundedCornerShape(20.dp))
+                .clip(cardShape)
+                .background(theme.surfaceBrush())
+                .then(theme.themedBevel(cardShape))
                 .padding(20.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -245,7 +227,6 @@ private fun CurrentTargetView(
                 theme = theme
             )
         } else {
-            // User just came back — prompt them
             Text(
                 stringResource(R.string.cache_clean_did_you_clear),
                 color = theme.fontsPrimary,
@@ -258,7 +239,6 @@ private fun CurrentTargetView(
 
         // ---- Actions ----
         if (!backFromSettings) {
-            // Primary action: open the app's info screen
             PrimaryButton(
                 label = stringResource(R.string.cache_clean_open_info),
                 theme = theme,
@@ -266,7 +246,6 @@ private fun CurrentTargetView(
                 onClick = onOpenAppInfo
             )
         } else {
-            // User is back — offer "cleared" or "skipped"
             PrimaryButton(
                 label = stringResource(R.string.cache_clean_mark_cleared),
                 theme = theme,
@@ -396,11 +375,13 @@ private fun SessionCompleteView(
 
         Spacer(Modifier.height(32.dp))
 
+        val summaryShape = theme.cornerShape(16)
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .clip(RoundedCornerShape(16.dp))
-                .background(theme.bgSurface)
+                .clip(summaryShape)
+                .background(theme.surfaceBrush())
+                .then(theme.themedBevel(summaryShape))
                 .padding(16.dp)
         ) {
             ResultRow(
@@ -440,12 +421,13 @@ private fun ResultRow(label: String, value: String, theme: ThemeSpec) {
 
 @Composable
 private fun OutlineButton(label: String, theme: ThemeSpec, onClick: () -> Unit) {
+    val shape = theme.cornerShape(14)
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(14.dp))
-            .background(theme.bgSurface)
-            .border(1.dp, theme.bevelBorder, RoundedCornerShape(14.dp))
+            .clip(shape)
+            .background(theme.surfaceBrush())
+            .then(theme.themedBevel(shape))
             .clickable(onClick = onClick)
             .padding(vertical = 14.dp),
         contentAlignment = Alignment.Center
